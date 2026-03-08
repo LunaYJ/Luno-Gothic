@@ -4,6 +4,8 @@
   --bg-panel-alt: #080808;
   --bg-input: #12070b;
   --accent: #8b0000;
+  --accent-light: #dc143c;
+  --accent-lighten: #ff1744;
   --text-title: #f5f0e8;
   --text-body: #d2c8e4;
   --text-muted: #a99fc2;
@@ -40,7 +42,11 @@ img {
 .light-mask {
   position: fixed;
   inset: 0;
-  background: linear-gradient(-75deg, #1a2d6b00 0%, #5E7EE0 40%, #88a9ff 50%, #5E7EE0 60%, #1a2d6b00 100%);
+  //background: linear-gradient(-55deg, #1a2d6b00 0%, #5E7EE0 40%, #88a9ff 50%, #5E7EE0 60%, #1a2d6b00 100%);
+  //background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #88a9ff 50%, #1a2d6b80 65%, #1a2d6b00 100%);
+  //background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #dc143c 50%, #1a2d6b80 65%, #1a2d6b00 100%);
+  background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #ff1744 50%, #1a2d6b80 65%, #1a2d6b00 100%);
+  //background: linear-gradient(-65deg, #8b000000 0%, #8b000080 35%, #ff1744 50%, #8b000080 65%, #8b000000 100%);
   z-index: 100;
   pointer-events: none;
   mix-blend-mode: soft-light;
@@ -170,7 +176,8 @@ img {
 }
 
 .site-nav .nav-current a {
-  color: var(--text-warm);
+  //color: var(--text-warm);
+  color: var(--accent);
 }
 
 .subscribe-btn,
@@ -279,6 +286,7 @@ img {
 
 .section-block {
   padding-top: 56px;
+  padding-bottom: 56px;
 }
 
 .section-title {
@@ -350,9 +358,14 @@ img {
 
 .latest-row h3 {
   margin: 0;
-  color: #f3eedf;
+  //color: #f3eedf;
+  color: var(--text-warm);
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  transition: color .3s;
+  &:hover {
+    color: var(--accent);
+  }
 }
 
 .latest-row p {
