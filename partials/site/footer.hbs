@@ -2,6 +2,11 @@
   <div class="footer-line"></div>
   <div class="footer-main">
     <p class="footer-brand">{{@site.title}}</p>
-    <p class="footer-copy">&copy; {{date format="YYYY"}} {{@site.title}}. All Rights Reserved.</p>
+    <p class="footer-copy">
+      &copy; {{date format="YYYY"}} {{@site.title}}. All Rights Reserved.
+      {{#if @custom.footer_icp}}
+        / <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">{{@custom.footer_icp}}</a>
+      {{/if}}
+    </p>
   </div>
 </footer>

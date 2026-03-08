@@ -10223,7 +10223,7 @@
                 "position": 0
               },
               {
-                "color": "#5E7EE0",
+                "color": "#5e7ee080",
                 "position": 0.4
               },
               {
@@ -10245,7 +10245,10 @@
           "flipY": false,
           "width": 1440,
           "height": 2191,
-          "textGrowth": "auto"
+          "textGrowth": "auto",
+          "opacity": 1,
+          "justifyContent": "start",
+          "effect": []
         }
       ]
     },

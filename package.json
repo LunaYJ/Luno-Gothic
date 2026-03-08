@@ -1,5 +1,5 @@
 {
-  "name": "gothic",
+  "name": "luno-gothic",
   "description": "Ghost theme based on gothic_ui.pen Scheme B",
   "version": "2.0.0",
   "author": {
@@ -63,6 +63,13 @@
       "hero_desc": {
         "type": "text",
         "default": "在暗色中书写故事，在静默中雕刻观点。"
+      },
+      "hero_bg": {
+        "type": "image"
+      },
+      "footer_icp": {
+        "type": "text",
+        "default": ""
       }
     }
   }
