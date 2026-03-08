@@ -358,6 +358,7 @@ img {
 .latest-row p {
   margin: 0;
   color: var(--text-warm);
+  flex-shrink: 0;
 }
 
 .pagination {

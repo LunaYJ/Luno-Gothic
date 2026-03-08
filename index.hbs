@@ -49,11 +49,11 @@
     {{#foreach posts}}
       <article class="latest-row">
         <h3><a href="{{url}}">{{title}}</a></h3>
-        <p>{{date published_at format="YYYY/MM/DD"}} · {{reading_time}}</p>
+        <p class="artical-info">{{date published_at format="YYYY/MM/DD"}} · {{reading_time}}</p>
       </article>
     {{/foreach}}
   </div>
   {{pagination}}
 </section>
 
-{{> "site/subscribe-section"}}
+<!--{{> "site/subscribe-section"}}-->
