@@ -1,0 +1,31 @@
+{{! Gothic Theme - Author Card Component }}
+<div class="author-card{{#if class}} {{class}}{{/if}}">
+    {{#if profile_image}}
+        <img src="{{profile_image}}" alt="{{name}}" class="author-card__avatar">
+    {{/if}}
+
+    <div class="author-card__content">
+        <h4 class="author-card__name">
+            {{#if url}}
+                <a href="{{url}}">{{name}}</a>
+            {{else}}
+                {{name}}
+            {{/if}}
+        </h4>
+
+        {{#if bio}}
+            <p class="author-card__bio">{{bio}}</p>
+        {{/if}}
+
+        {{#if website}}
+            <a href="{{website}}" class="author-card__link" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                {{t "Website"}}
+            </a>
+        {{/if}}
+    </div>
+</div>

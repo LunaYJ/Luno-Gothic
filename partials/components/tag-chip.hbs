@@ -1,0 +1,10 @@
+{{! Gothic Theme - Tag Chip Component }}
+<a href="{{url}}" class="tag-chip{{#if class}} {{class}}{{/if}}">
+    {{#if feature_image}}
+        <span class="tag-chip__image">
+            <img src="{{img_url feature_image size="xs"}}" alt="{{name}}">
+        </span>
+    {{/if}}
+    <span class="tag-chip__name">{{name}}</span>
+    <span class="tag-chip__count">{{plural count empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}</span>
+</a>

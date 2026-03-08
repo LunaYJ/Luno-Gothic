@@ -1,0 +1,9 @@
+<article class="post-card">
+  <a class="post-card-link" href="{{url}}">
+    {{#if feature_image}}
+      <img class="post-card-image" src="{{img_url feature_image size='m'}} alt="{{title}}" loading="lazy">
+    {{/if}}
+    <p class="post-card-meta">{{date published_at format="YYYY / MM / DD"}} · {{reading_time}}</p>
+    <h3 class="post-card-title">{{title}}</h3>
+  </a>
+</article>

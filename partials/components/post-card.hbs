@@ -1,0 +1,40 @@
+{{! Gothic Theme - Post Card Component }}
+<article class="post-card{{#if class}} {{class}}{{/if}}"{{#if featured}} data-featured="true"{{/if}}>
+
+    {{#if feature_image}}
+        <a href="{{url}}" class="post-card__image-link">
+            <div class="post-card__image">
+                <img
+                    src="{{img_url feature_image size="m"}}"
+                    srcset="{{img_url feature_image size="s"}} 300w, {{img_url feature_image size="m"}} 600w, {{img_url feature_image size="l"}} 1000w"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    alt="{{title}}"
+                    loading="lazy"
+                >
+            </div>
+        </a>
+    {{/if}}
+
+    <div class="post-card__content">
+        {{#if primary_tag}}
+            <span class="post-card__tag">{{primary_tag.name}}</span>
+        {{/if}}
+
+        <h3 class="post-card__title">
+            <a href="{{url}}">{{title}}</a>
+        </h3>
+
+        {{#if excerpt}}
+            <p class="post-card__excerpt">{{excerpt words="20"}}</p>
+        {{/if}}
+
+        <div class="post-card__meta">
+            <time datetime="{{published_at}}" class="post-card__date">
+                {{date published_at format="MMM D, YYYY"}}
+            </time>
+            <span class="post-card__separator">&middot;</span>
+            <span class="post-card__reading-time">{{reading_time}}</span>
+        </div>
+    </div>
+
+</article>

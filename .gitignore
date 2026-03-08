@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+.npm
+.yarn-integrity
+
+# Build output
+assets/built/
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+coverage/
+.nyc_output/
+
+# Theme packages
+*.zip
+gothic.zip
+
+# Temporary files
+.tmp/
+temp/
+*.tmp
+
+# Ghost specific
+content/
+!content/themes/

@@ -1,0 +1,214 @@
+/*!
+ * Gothic Theme - Container Layout
+ * 容器布局系统
+ */
+
+/* ============================================
+   基础容器
+   ============================================ */
+.gothic-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+/* ============================================
+   容器尺寸变体
+   ============================================ */
+.gothic-container--narrow {
+  max-width: 800px;
+}
+
+.gothic-container--wide {
+  max-width: 1400px;
+}
+
+.gothic-container--full {
+  max-width: none;
+}
+
+/* ============================================
+   响应式容器
+   ============================================ */
+@media (min-width: 768px) {
+  .gothic-container {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gothic-container {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .gothic-container {
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
+  }
+}
+
+/* ============================================
+   页面区域
+   ============================================ */
+.gothic-section {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+.gothic-section--sm {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.gothic-section--lg {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+.gothic-section--xl {
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-20);
+}
+
+.gothic-section--none {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* ============================================
+   内容区域
+   ============================================ */
+.gothic-content {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gothic-content--wide {
+  max-width: 900px;
+}
+
+.gothic-content--full {
+  max-width: none;
+}
+
+/* ============================================
+   两栏布局
+   ============================================ */
+.gothic-layout-sidebar {
+  display: grid;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .gothic-layout-sidebar {
+    grid-template-columns: 280px 1fr;
+  }
+
+  .gothic-layout-sidebar--left {
+    grid-template-columns: 280px 1fr;
+  }
+
+  .gothic-layout-sidebar--right {
+    grid-template-columns: 1fr 280px;
+  }
+}
+
+/* ============================================
+   侧边栏
+   ============================================ */
+.gothic-sidebar {
+  position: sticky;
+  top: var(--space-8);
+  align-self: start;
+}
+
+/* ============================================
+   垂直居中容器
+   ============================================ */
+.gothic-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* ============================================
+   卡片容器
+   ============================================ */
+.gothic-cards {
+  display: grid;
+  gap: var(--space-6);
+}
+
+/* ============================================
+   Flex 容器变体
+   ============================================ */
+.gothic-flex {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.gothic-flex--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gothic-flex--between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gothic-flex--column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ============================================
+   分割线容器
+   ============================================ */
+.gothic-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.gothic-divider--accent {
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--color-divider) 20%,
+    var(--color-divider) 80%,
+    transparent
+  );
+}
+
+/* ============================================
+   页面包装器
+   ============================================ */
+.gothic-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.gothic-main {
+  flex: 1;
+  padding-top: var(--space-8);
+}
+
+.gothic-main--no-padding {
+  padding-top: 0;
+}

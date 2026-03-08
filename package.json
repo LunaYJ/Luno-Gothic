@@ -1,0 +1,69 @@
+{
+  "name": "gothic",
+  "description": "Ghost theme based on gothic_ui.pen Scheme B",
+  "version": "2.0.0",
+  "author": {
+    "name": "Luna YJ",
+    "email": "luna_yj@hotmail.com"
+  },
+  "engines": {
+    "ghost": ">=5.0.0",
+    "node": ">=18.0.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "run-p dev:build dev:serve",
+    "dev:build": "vite build --watch --mode development",
+    "dev:serve": "browser-sync start --config bs-config.js",
+    "build": "vite build --mode production",
+    "zip": "npm run build && bestzip gothic.zip assets/ partials/ *.hbs package.json",
+    "clean": "rm -rf assets/built"
+  },
+  "devDependencies": {
+    "bestzip": "^2.2.1",
+    "browser-sync": "^3.0.2",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.77.8",
+    "vite": "^5.4.11"
+  },
+  "config": {
+    "posts_per_page": 10,
+    "image_sizes": {
+      "s": {
+        "width": 400
+      },
+      "m": {
+        "width": 750
+      },
+      "l": {
+        "width": 1200
+      },
+      "xl": {
+        "width": 2000
+      }
+    },
+    "card_assets": true,
+    "custom": {
+      "profile_badge": {
+        "type": "text",
+        "default": "Dark notes"
+      },
+      "profile_role": {
+        "type": "text",
+        "default": "Writer / Curator"
+      },
+      "profile_bio": {
+        "type": "text",
+        "default": "记录设计、阅读与深夜思考。"
+      },
+      "hero_title": {
+        "type": "text",
+        "default": "INTO THE VELVET NIGHT"
+      },
+      "hero_desc": {
+        "type": "text",
+        "default": "在暗色中书写故事，在静默中雕刻观点。"
+      }
+    }
+  }
+}

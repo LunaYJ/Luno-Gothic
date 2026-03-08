@@ -1,0 +1,176 @@
+/*!
+ * Gothic Theme - CSS Reset
+ * 基于 Modern CSS Reset 修改
+ */
+
+/* ============================================
+   基础重置
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   HTML 基础设置
+   ============================================ */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   Body 基础设置
+   ============================================ */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ============================================
+   媒体元素重置
+   ============================================ */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================
+   表单元素重置
+   ============================================ */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ============================================
+   表格重置
+   ============================================ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ============================================
+   移除默认样式
+   ============================================ */
+fieldset {
+  border: none;
+}
+
+legend {
+  padding: 0;
+}
+
+/* ============================================
+   隐藏元素
+   ============================================ */
+[hidden] {
+  display: none !important;
+}
+
+/* ============================================
+   可访问性
+   ============================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: normal;
+}
+
+/* ============================================
+   聚焦样式
+   ============================================ */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary, #8B0000);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   选中样式
+   ============================================ */
+::selection {
+  background-color: var(--color-accent-primary, #8B0000);
+  color: var(--color-text-primary, #F5F0E8);
+}
+
+/* ============================================
+   滚动条样式（Webkit）
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary, #0a0a0a);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-elevated, #111111);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-primary, #8B0000);
+}
+
+/* ============================================
+   Firefox 滚动条
+   ============================================ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-bg-elevated, #111111) var(--color-bg-primary, #0a0a0a);
+}

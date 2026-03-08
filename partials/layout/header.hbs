@@ -1,0 +1,49 @@
+{{! Gothic Theme - Header Partial }}
+<header class="site-header" id="site-header">
+    {{! 顶部装饰线 }}
+    <div class="header-line header-line--top"></div>
+
+    <div class="header-inner">
+        {{! Logo / 站点名称 }}
+        <div class="site-brand">
+            {{#if @site.logo}}
+                <a href="{{@site.url}}" class="site-logo">
+                    <img src="{{@site.logo}}" alt="{{@site.title}}">
+                </a>
+            {{else}}
+                <a href="{{@site.url}}" class="site-title">{{@site.title}}</a>
+            {{/if}}
+        </div>
+
+        {{! 导航菜单 }}
+        <nav class="site-nav" id="site-nav">
+            {{navigation}}
+        </nav>
+
+        {{! 右侧操作按钮 }}
+        <div class="header-actions">
+            {{! 搜索按钮 }}
+            <button class="btn-search" id="btn-search" aria-label="{{t "Search"}}">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+            </button>
+
+            {{! 订阅按钮 (触发 Ghost Portal) }}
+            {{#if @site.members_enabled}}
+                <button class="btn-subscribe" data-portal="signup" aria-label="{{t "Subscribe"}}">
+                    {{t "Subscribe"}}
+                </button>
+            {{/if}}
+        </div>
+
+        {{! 移动端菜单按钮 }}
+        <button class="btn-menu-toggle" id="btn-menu-toggle" aria-label="{{t "Menu"}}" aria-expanded="false">
+            <span class="menu-icon"></span>
+        </button>
+    </div>
+
+    {{! 底部装饰线 }}
+    <div class="header-line header-line--bottom"></div>
+</header>

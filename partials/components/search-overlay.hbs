@@ -1,0 +1,40 @@
+{{! Gothic Theme - Search Overlay Component }}
+<div class="search-overlay" id="search-overlay" aria-hidden="true">
+    <div class="search-backdrop" id="search-backdrop"></div>
+
+    <div class="search-modal">
+        <div class="search-header">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+                <input
+                    type="search"
+                    id="search-input"
+                    class="search-input"
+                    placeholder="{{t "Search articles..."}}"
+                    autocomplete="off"
+                >
+                <button class="search-close" id="search-close" aria-label="{{t "Close search"}}">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="search-results" id="search-results">
+            <div class="search-results-empty">
+                <p>{{t "Type to search..."}}</p>
+            </div>
+        </div>
+
+        <div class="search-footer">
+            <span class="search-shortcut">
+                <kbd>ESC</kbd> {{t "to close"}}
+            </span>
+        </div>
+    </div>
+</div>

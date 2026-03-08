@@ -1,0 +1,1064 @@
+/*!
+ * Gothic Theme - Ghost Overrides
+ * Ghost 默认样式覆盖
+ */
+
+/* ============================================
+   Ghost 全局容器
+   ============================================ */
+.outer {
+  background-color: var(--color-bg-primary);
+}
+
+.site-wrapper {
+  background-color: var(--color-bg-primary);
+  min-height: 100vh;
+}
+
+/* ============================================
+   Ghost 导航覆盖
+   ============================================ */
+.gh-navigation {
+  background-color: var(--color-header-bg) !important;
+  border-bottom-color: var(--color-divider) !important;
+}
+
+.gh-navigation a {
+  color: var(--color-text-secondary) !important;
+}
+
+.gh-navigation a:hover {
+  color: var(--color-text-primary) !important;
+}
+
+/* ============================================
+   Ghost Logo
+   ============================================ */
+.gh-logo {
+  font-family: var(--font-display) !important;
+  font-weight: var(--font-bold) !important;
+  letter-spacing: var(--tracking-widest) !important;
+  text-transform: uppercase !important;
+}
+
+.gh-logo-image {
+  filter: brightness(0) invert(1);
+}
+
+/* ============================================
+   Ghost 文章列表
+   ============================================ */
+.post-feed {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition-normal),
+              box-shadow var(--transition-normal);
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(139, 0, 0, 0.15);
+  border-color: var(--color-accent-primary);
+}
+
+.post-card-image-link {
+  display: block;
+}
+
+.post-card-image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+  filter: grayscale(30%);
+  transition: filter var(--transition-normal);
+}
+
+.post-card:hover .post-card-image {
+  filter: grayscale(0%);
+}
+
+.post-card-content {
+  padding: var(--space-card-padding);
+}
+
+.post-card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-2);
+}
+
+.post-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.post-card-title a:hover {
+  color: var(--color-accent-primary);
+}
+
+.post-card-excerpt {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   Ghost 文章内容
+   ============================================ */
+.article-body {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.article-body p {
+  margin-bottom: var(--space-para);
+}
+
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+  font-family: var(--font-display);
+  color: var(--color-text-primary);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+.article-body a {
+  color: var(--color-accent-primary);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.article-body a:hover {
+  text-decoration-color: var(--color-accent-primary);
+}
+
+.article-body blockquote {
+  border-left: 3px solid var(--color-accent-primary);
+  padding-left: var(--space-4);
+  margin: var(--space-8) 0;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.article-body img {
+  border-radius: var(--radius-md);
+  max-width: 100%;
+  height: auto;
+}
+
+.article-body pre {
+  background-color: var(--color-bg-tertiary);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.article-body code {
+  font-family: var(--font-mono);
+  background-color: var(--color-bg-tertiary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================
+   Ghost 分页
+   ============================================ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.pagination-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.pagination-page:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+}
+
+.pagination-page.current {
+  background-color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+}
+
+.pagination-prev,
+.pagination-next {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* ============================================
+   Ghost 标签页
+   ============================================ */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+  margin-bottom: var(--space-8);
+}
+
+.tag-list-item {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-tertiary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.tag-list-item:hover {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+}
+
+.tag-list-item.active {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+}
+
+/* ============================================
+   Ghost 作者页
+   ============================================ */
+.author-profile {
+  text-align: center;
+  padding: var(--space-8) 0;
+}
+
+.author-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--space-4);
+  border: 3px solid var(--color-accent-primary);
+}
+
+.author-name {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.author-bio {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 0 auto var(--space-4);
+}
+
+.author-social {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.author-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.author-social-link:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-tertiary);
+}
+
+/* ============================================
+   Ghost 错误页
+   ============================================ */
+.error-content {
+  text-align: center;
+  padding: var(--space-16) var(--space-4);
+}
+
+.error-code {
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  font-weight: var(--font-bold);
+  color: var(--color-accent-primary);
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.error-message {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+/* ============================================
+   Ghost 搜索
+   ============================================ */
+.search-modal {
+  background-color: var(--color-bg-secondary);
+}
+
+.search-input {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-6);
+}
+
+.search-input:focus {
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
+}
+
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-result {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.search-result-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+}
+
+.search-result-excerpt {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   Ghost 会员/订阅
+   ============================================ */
+.gh-member-subscribe {
+  background: linear-gradient(180deg,
+    var(--color-bg-secondary) 0%,
+    var(--color-bg-primary) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.gh-member-subscribe__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.gh-member-subscribe__description {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+/* ============================================
+   Ghost 评论区
+   ============================================ */
+.comments-area {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.comments-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-item {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.comment-author {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.comment-date {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.comment-content {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-top: var(--space-2);
+}
+
+/* ============================================
+   Ghost 响应式覆盖
+   ============================================ */
+@media (max-width: 767px) {
+  .post-card-content {
+    padding: var(--space-4);
+  }
+
+  .post-card-title {
+    font-size: var(--text-lg);
+  }
+
+  .article-body {
+    font-size: var(--text-base);
+  }
+
+  .error-code {
+    font-size: var(--text-5xl);
+  }
+}
+
+/* ============================================
+   Ghost .gh-content 内容样式覆盖
+   ============================================ */
+.gh-content {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.gh-content > *:first-child {
+  margin-top: 0;
+}
+
+.gh-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.gh-content p {
+  margin-bottom: var(--space-para);
+}
+
+.gh-content h1,
+.gh-content h2,
+.gh-content h3,
+.gh-content h4,
+.gh-content h5,
+.gh-content h6 {
+  font-family: var(--font-display);
+  color: var(--color-text-primary);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-tight);
+}
+
+.gh-content h1 { font-size: var(--text-4xl); }
+.gh-content h2 { font-size: var(--text-3xl); }
+.gh-content h3 { font-size: var(--text-2xl); }
+.gh-content h4 { font-size: var(--text-xl); }
+.gh-content h5 { font-size: var(--text-lg); }
+.gh-content h6 { font-size: var(--text-base); }
+
+.gh-content a {
+  color: var(--color-accent-primary);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition-fast);
+}
+
+.gh-content a:hover {
+  text-decoration-color: var(--color-accent-primary);
+}
+
+/* ============================================
+   代码块高亮样式（哥特暗色主题）
+   ============================================ */
+.gh-content pre,
+.gh-content code {
+  font-family: var(--font-mono);
+}
+
+.gh-content pre {
+  background-color: var(--color-bg-tertiary);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: var(--space-6) 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  border: 1px solid var(--color-border);
+}
+
+.gh-content code {
+  background-color: var(--color-bg-tertiary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+  color: var(--color-text-primary);
+}
+
+.gh-content pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  color: var(--color-text-secondary);
+}
+
+/* 代码高亮 - 哥特暗色主题 */
+.gh-content pre .comment,
+.gh-content pre .prolog,
+.gh-content pre .doctype,
+.gh-content pre .cdata {
+  color: #6a617c;
+  font-style: italic;
+}
+
+.gh-content pre .punctuation {
+  color: #8E82A7;
+}
+
+.gh-content pre .property,
+.gh-content pre .tag,
+.gh-content pre .boolean,
+.gh-content pre .number,
+.gh-content pre .constant,
+.gh-content pre .symbol,
+.gh-content pre .deleted {
+  color: #c7b58b;
+}
+
+.gh-content pre .selector,
+.gh-content pre .attr-name,
+.gh-content pre .string,
+.gh-content pre .char,
+.gh-content pre .builtin,
+.gh-content pre .inserted {
+  color: #a99fc2;
+}
+
+.gh-content pre .operator,
+.gh-content pre .entity,
+.gh-content pre .url,
+.gh-content pre .variable {
+  color: #F5F0E8;
+}
+
+.gh-content pre .atrule,
+.gh-content pre .attr-value,
+.gh-content pre .function,
+.gh-content pre .class-name {
+  color: #c9b68a;
+}
+
+.gh-content pre .keyword {
+  color: #8B0000;
+}
+
+.gh-content pre .regex,
+.gh-content pre .important {
+  color: #c7b58b;
+  font-weight: var(--font-bold);
+}
+
+/* ============================================
+   引用块样式增强
+   ============================================ */
+.gh-content blockquote {
+  border-left: 3px solid var(--color-accent-primary);
+  padding-left: var(--space-4);
+  margin: var(--space-8) 0;
+  font-style: italic;
+  color: var(--color-text-muted);
+  font-size: var(--text-xl);
+  position: relative;
+}
+
+.gh-content blockquote::before {
+  content: '"';
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  color: var(--color-accent-primary);
+  opacity: 0.3;
+  position: absolute;
+  left: -5px;
+  top: -10px;
+}
+
+.gh-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   图片样式增强
+   ============================================ */
+.gh-content img {
+  border-radius: var(--radius-md);
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-6) 0;
+  display: block;
+}
+
+.gh-content figure {
+  margin: var(--space-8) 0;
+}
+
+.gh-content figcaption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  font-style: italic;
+  margin-top: var(--space-2);
+}
+
+/* ============================================
+   表格样式增强
+   ============================================ */
+.gh-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: var(--text-base);
+}
+
+.gh-content th,
+.gh-content td {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.gh-content th {
+  font-family: var(--font-display);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-tertiary);
+}
+
+.gh-content tr:nth-child(even) {
+  background-color: var(--color-bg-tertiary);
+}
+
+/* ============================================
+   列表样式增强
+   ============================================ */
+.gh-content ul,
+.gh-content ol {
+  padding-left: var(--space-6);
+  margin: var(--space-4) 0;
+}
+
+.gh-content li {
+  margin-bottom: var(--space-2);
+}
+
+.gh-content ul {
+  list-style-type: disc;
+}
+
+.gh-content ul ul {
+  list-style-type: circle;
+}
+
+.gh-content ol {
+  list-style-type: decimal;
+}
+
+/* ============================================
+   分割线样式增强
+   ============================================ */
+.gh-content hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--color-divider) 20%,
+    var(--color-divider) 80%,
+    transparent
+  );
+  margin: var(--space-10) 0;
+}
+
+/* ============================================
+   打印样式优化
+   ============================================ */
+@media print {
+  .gh-navigation,
+  .gothic-footer,
+  .gothic-hero,
+  .gothic-post__share,
+  .gothic-post__related,
+  .gothic-post__nav,
+  .pagination,
+  .comments-area,
+  .gh-member-subscribe {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: #1a1a1a !important;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  .gh-content {
+    color: #1a1a1a !important;
+    font-size: 11pt;
+  }
+
+  .gh-content h1,
+  .gh-content h2,
+  .gh-content h3,
+  .gh-content h4,
+  .gh-content h5,
+  .gh-content h6 {
+    color: #000 !important;
+    page-break-after: avoid;
+  }
+
+  .gh-content h1 { font-size: 24pt; }
+  .gh-content h2 { font-size: 20pt; }
+  .gh-content h3 { font-size: 16pt; }
+
+  a {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+
+  .gh-content a::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666 !important;
+  }
+
+  .gh-content img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  .gh-content pre,
+  .gh-content code {
+    background: #f5f5f5 !important;
+    border: 1px solid #ddd !important;
+    color: #333 !important;
+  }
+
+  .article-body,
+  .gh-content {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .post-card {
+    break-inside: avoid;
+    border: 1px solid #ddd !important;
+  }
+
+  .gothic-post__header {
+    padding: 20px 0 !important;
+  }
+
+  .gothic-post__title {
+    font-size: 24pt !important;
+  }
+
+  /* 隐藏不需要打印的元素 */
+  .social-share,
+  .author-social,
+  .post-tags,
+  .read-next {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   性能优化 - 图片懒加载
+   ============================================ */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+img[loading="lazy"].loaded,
+img[loading="lazy"][src] {
+  opacity: 1;
+}
+
+.gothic-card__image,
+.post-card-image,
+.gothic-post__image {
+  background-color: var(--color-bg-tertiary);
+}
+
+/* 占位符骨架屏效果 */
+.image-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-tertiary) 25%,
+    var(--color-bg-secondary) 50%,
+    var(--color-bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+/* ============================================
+   性能优化 - 字体加载优化
+   ============================================ */
+@font-face {
+  font-family: 'Cinzel';
+  font-display: swap;
+  src: local('Cinzel');
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-display: swap;
+  src: local('Cormorant Garamond');
+}
+
+/* 字体加载中的备选字体 */
+.font-loading {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 字体加载完成后应用主题字体 */
+.font-loaded {
+  font-family: var(--font-body);
+}
+
+/* ============================================
+   减少动画（可访问性）
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .post-card:hover,
+  .gothic-card:hover {
+    transform: none;
+  }
+}
+
+/* ============================================
+   高对比度模式
+   ============================================ */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: #444444;
+    --color-text-muted: #cccccc;
+    --color-accent-primary: #ff0000;
+    --color-bg-tertiary: #1a1a1a;
+  }
+
+  .post-card,
+  .gothic-card {
+    border-width: 2px;
+  }
+
+  .gh-content a {
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* ============================================
+   暗黑模式（系统偏好）
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* 默认已经是暗黑主题，保持不变 */
+  }
+}
+
+/* ============================================
+   触摸设备优化
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  .post-card:hover {
+    transform: none;
+  }
+
+  .gothic-card:hover {
+    transform: none;
+  }
+
+  .gothic-btn,
+  .gothic-nav__link,
+  .gothic-footer__link {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* 触摸设备显示下划线代替悬停效果 */
+  .gothic-nav__link,
+  .gothic-footer__link {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 3px;
+  }
+
+  .gothic-nav__link:hover,
+  .gothic-footer__link:hover {
+    text-decoration-color: var(--color-accent-primary);
+  }
+}
+
+/* ============================================
+   移动端菜单样式增强
+   ============================================ */
+@media (max-width: 767px) {
+  .gothic-nav__mobile-links {
+    background-color: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .gothic-nav__mobile-link {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .gothic-nav__mobile-link:last-child {
+    border-bottom: none;
+  }
+
+  .gothic-hero__actions {
+    width: 100%;
+  }
+
+  .gothic-hero__actions .gothic-btn {
+    width: 100%;
+  }
+
+  .gothic-card--horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .gothic-grid--responsive {
+    grid-template-columns: 1fr;
+  }
+
+  .gothic-post__meta {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .gothic-footer__container {
+    grid-template-columns: 1fr;
+  }
+
+  .gothic-footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gothic-post__nav {
+    grid-template-columns: 1fr;
+  }
+
+  .gothic-post__nav-next {
+    text-align: left;
+  }
+}
+
+/* ============================================
+   平板响应式
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gothic-grid--responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gothic-card--horizontal .gothic-card__body {
+    padding: var(--space-5);
+  }
+
+  .gothic-post__title {
+    font-size: var(--text-3xl);
+  }
+
+  .gh-content {
+    font-size: var(--text-base);
+  }
+}

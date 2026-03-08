@@ -1,0 +1,276 @@
+/*!
+ * Gothic Theme - Main Entry
+ * Ghost 哥特主题主样式文件
+ *
+ * @version 1.0.0
+ * @author Gothic Theme
+ */
+
+/* ============================================
+   Google Fonts 引入
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Fira+Code&display=swap');
+
+/* ============================================
+   基础样式
+   ============================================ */
+@import 'base/reset.css';
+@import 'base/variables.css';
+@import 'base/typography.css';
+@import 'base/utility.css';
+
+/* ============================================
+   布局样式
+   ============================================ */
+@import 'layout/container.css';
+@import 'layout/grid.css';
+@import 'layout/responsive.css';
+
+/* ============================================
+   组件样式
+   ============================================ */
+@import 'components/nav.css';
+@import 'components/card.css';
+@import 'components/button.css';
+@import 'components/form.css';
+@import 'components/footer.css';
+@import 'components/hero.css';
+@import 'components/post.css';
+
+/* ============================================
+   Ghost 特定样式覆盖
+   ============================================ */
+@import 'ghost-overrides.css';
+
+/* ============================================
+   动画关键帧
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ============================================
+   动画工具类
+   ============================================ */
+.animate-fadeIn {
+  animation: fadeIn var(--transition-normal) var(--ease-default) forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp var(--transition-slow) var(--ease-out) forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown var(--transition-slow) var(--ease-out) forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft var(--transition-slow) var(--ease-out) forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight var(--transition-slow) var(--ease-out) forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn var(--transition-normal) var(--ease-out) forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* 动画延迟 */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+.animate-delay-600 { animation-delay: 600ms; }
+.animate-delay-700 { animation-delay: 700ms; }
+.animate-delay-800 { animation-delay: 800ms; }
+
+/* ============================================
+   页面加载动画
+   ============================================ */
+.page-enter {
+  opacity: 0;
+  animation: pageEnter var(--transition-slow) var(--ease-out) forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   通用加载状态
+   ============================================ */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ============================================
+   打印样式
+   ============================================ */
+@media print {
+  .gothic-nav,
+  .gothic-footer,
+  .gothic-hero,
+  .gothic-post__share,
+  .gothic-post__related {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  .gh-content a::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+  }
+}
+
+/* ============================================
+   减少动画（可访问性）
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   高对比度模式
+   ============================================ */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: #333333;
+    --color-text-muted: #cccccc;
+    --color-accent-primary: #cc0000;
+  }
+
+  .gothic-card {
+    border-width: 2px;
+  }
+}

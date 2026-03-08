@@ -1,0 +1,133 @@
+{
+  "timestamp": "2026-03-08T14:02:37Z",
+  "project": {
+    "name": "gothic",
+    "type": "ghost-theme",
+    "version": "1.0.0",
+    "path": "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic"
+  },
+  "modules": [
+    {
+      "path": "/",
+      "type": "root",
+      "role": "主题根目录",
+      "entryFiles": ["default.hbs", "index.hbs", "post.hbs", "package.json"],
+      "keyFiles": [
+        "default.hbs",
+        "index.hbs",
+        "post.hbs",
+        "page.hbs",
+        "tag.hbs",
+        "author.hbs",
+        "error.hbs",
+        "package.json"
+      ]
+    },
+    {
+      "path": "/partials",
+      "type": "partials",
+      "role": "Handlebars 可复用组件",
+      "entryFiles": ["layout/head.hbs", "layout/header.hbs", "layout/footer.hbs"],
+      "keyFiles": [
+        "partials/layout/head.hbs",
+        "partials/layout/header.hbs",
+        "partials/layout/footer.hbs",
+        "partials/components/post-card.hbs",
+        "partials/components/featured-post-card.hbs",
+        "partials/components/search-overlay.hbs",
+        "partials/components/newsletter-form.hbs",
+        "partials/components/author-card.hbs",
+        "partials/components/related-posts.hbs",
+        "partials/components/tag-chip.hbs",
+        "partials/components/pagination.hbs",
+        "partials/components/social-links.hbs",
+        "partials/components/scroll-progress.hbs"
+      ]
+    },
+    {
+      "path": "/assets",
+      "type": "assets",
+      "role": "静态资源",
+      "entryFiles": ["css/main.css", "js/main.js"],
+      "keyFiles": [
+        "assets/css/main.css",
+        "assets/css/base/variables.css",
+        "assets/css/base/reset.css",
+        "assets/css/base/typography.css",
+        "assets/css/layout/container.css",
+        "assets/css/layout/grid.css",
+        "assets/css/components/nav.css",
+        "assets/css/components/card.css",
+        "assets/css/components/hero.css",
+        "assets/css/components/post.css",
+        "assets/js/main.js",
+        "assets/js/core/constants.js",
+        "assets/js/core/utils.js",
+        "assets/js/modules/navigation.js",
+        "assets/js/modules/animation.js",
+        "assets/js/modules/search.js",
+        "assets/js/modules/form.js",
+        "assets/js/modules/mobile-menu.js"
+      ]
+    },
+    {
+      "path": "/docs",
+      "type": "docs",
+      "role": "项目文档",
+      "entryFiles": [],
+      "keyFiles": [
+        "docs/architecture.md",
+        "docs/tech-spec.md",
+        "docs/css-architecture.md",
+        "docs/js-architecture.md",
+        "docs/templates-plan.md"
+      ]
+    }
+  ],
+  "coverage": {
+    "totalFiles": 66,
+    "scannedFiles": 66,
+    "coveragePercent": 100,
+    "scannedTemplates": 13,
+    "scannedCSS": 16,
+    "scannedJS": 9,
+    "scannedDocs": 5
+  },
+  "gaps": [],
+  "ignored": {
+    "patterns": ["node_modules/**", ".git/**", ".idea/**", ".spec-workflow/**"],
+    "count": 4,
+    "directories": [".git", ".idea", ".spec-workflow", ".claude"]
+  },
+  "documentation": {
+    "rootClaudeMd": "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/CLAUDE.md",
+    "moduleClaudeMds": [
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/assets/CLAUDE.md",
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/assets/css/CLAUDE.md",
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/assets/css/base/CLAUDE.md",
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/assets/css/layout/CLAUDE.md",
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/assets/css/components/CLAUDE.md",
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/assets/js/CLAUDE.md",
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/assets/js/core/CLAUDE.md",
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/assets/js/modules/CLAUDE.md",
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/partials/CLAUDE.md",
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/partials/components/CLAUDE.md",
+      "/Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic/partials/layout/CLAUDE.md"
+    ]
+  },
+  "metadata": {
+    "ghostVersion": ">=5.0.0",
+    "themeName": "gothic",
+    "themeDescription": "A dark gothic Ghost theme with elegant typography and sophisticated interactions",
+    "languages": ["handlebars", "css", "javascript"],
+    "features": [
+      "dark-theme",
+      "responsive",
+      "search",
+      "newsletter",
+      "animation",
+      "mobile-menu"
+    ]
+  },
+  "truncated": false
+}

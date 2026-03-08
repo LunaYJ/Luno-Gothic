@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Pencil__open_document",
+      "mcp__Pencil__get_editor_state",
+      "mcp__Pencil__batch_get",
+      "mcp__Pencil__get_variables"
+    ]
+  }
+}

@@ -1,0 +1,495 @@
+/*!
+ * Gothic Theme - Post Component
+ * 文章详情页组件
+ */
+
+/* ============================================
+   文章头部
+   ============================================ */
+.gothic-post__header {
+  text-align: center;
+  padding: var(--space-12) var(--space-4) var(--space-8);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gothic-post__category {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-bottom: var(--space-4);
+}
+
+.gothic-post__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .gothic-post__title {
+    font-size: var(--text-4xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gothic-post__title {
+    font-size: var(--text-5xl);
+  }
+}
+
+/* ============================================
+   文章元信息
+   ============================================ */
+.gothic-post__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.gothic-post__meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.gothic-post__meta-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+/* ============================================
+   文章标签
+   ============================================ */
+.gothic-post__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+/* ============================================
+   文章封面图
+   ============================================ */
+.gothic-post__media {
+  position: relative;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  margin-bottom: var(--space-8);
+}
+
+.gothic-post__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gothic-post__media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(10, 10, 10, 0.6) 100%
+  );
+}
+
+.gothic-post__caption {
+  position: absolute;
+  bottom: var(--space-4);
+  left: var(--space-4);
+  right: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ============================================
+   文章内容
+   ============================================ */
+.gothic-post__content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .gothic-post__content {
+    padding: 0 var(--space-8);
+  }
+}
+
+/* Ghost 内容样式覆盖 */
+.gh-content {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.gh-content > *:first-child {
+  margin-top: 0;
+}
+
+.gh-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.gh-content p {
+  margin-bottom: var(--space-para);
+}
+
+.gh-content h1,
+.gh-content h2,
+.gh-content h3,
+.gh-content h4,
+.gh-content h5,
+.gh-content h6 {
+  font-family: var(--font-display);
+  color: var(--color-text-primary);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+.gh-content h2 {
+  font-size: var(--text-2xl);
+}
+
+.gh-content h3 {
+  font-size: var(--text-xl);
+}
+
+.gh-content h4 {
+  font-size: var(--text-lg);
+}
+
+/* ============================================
+   文章链接
+   ============================================ */
+.gh-content a {
+  color: var(--color-accent-primary);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition-fast);
+}
+
+.gh-content a:hover {
+  text-decoration-color: var(--color-accent-primary);
+}
+
+/* ============================================
+   文章引用
+   ============================================ */
+.gh-content blockquote {
+  border-left: 3px solid var(--color-accent-primary);
+  padding-left: var(--space-4);
+  margin: var(--space-8) 0;
+  font-style: italic;
+  color: var(--color-text-muted);
+  font-size: var(--text-xl);
+}
+
+.gh-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   代码块
+   ============================================ */
+.gh-content pre,
+.gh-content code {
+  font-family: var(--font-mono);
+}
+
+.gh-content pre {
+  background-color: var(--color-bg-tertiary);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: var(--space-6) 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.gh-content code {
+  background-color: var(--color-bg-tertiary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+  color: var(--color-text-primary);
+}
+
+.gh-content pre code {
+  background: none;
+  padding: 0;
+}
+
+/* ============================================
+   图片
+   ============================================ */
+.gh-content img {
+  border-radius: var(--radius-md);
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-6) 0;
+}
+
+.gh-content figure {
+  margin: var(--space-8) 0;
+}
+
+.gh-content figcaption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  font-style: italic;
+  margin-top: var(--space-2);
+}
+
+/* ============================================
+   列表
+   ============================================ */
+.gh-content ul,
+.gh-content ol {
+  padding-left: var(--space-6);
+  margin: var(--space-4) 0;
+}
+
+.gh-content li {
+  margin-bottom: var(--space-2);
+}
+
+/* ============================================
+   表格
+   ============================================ */
+.gh-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: var(--text-base);
+}
+
+.gh-content th,
+.gh-content td {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.gh-content th {
+  font-family: var(--font-display);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-tertiary);
+}
+
+/* ============================================
+   分割线
+   ============================================ */
+.gh-content hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--color-divider) 20%,
+    var(--color-divider) 80%,
+    transparent
+  );
+  margin: var(--space-10) 0;
+}
+
+/* ============================================
+   文章分享
+   ============================================ */
+.gothic-post__share {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-8);
+}
+
+.gothic-post__share-label {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ============================================
+   作者信息
+   ============================================ */
+.gothic-post__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-8);
+}
+
+.gothic-post__author-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.gothic-post__author-info {
+  flex: 1;
+}
+
+.gothic-post__author-name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.gothic-post__author-bio {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* ============================================
+   相关文章
+   ============================================ */
+.gothic-post__related {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.gothic-post__related-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+/* ============================================
+   导航
+   ============================================ */
+.gothic-post__nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.gothic-post__nav-prev,
+.gothic-post__nav-next {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+
+.gothic-post__nav-next {
+  text-align: right;
+}
+
+.gothic-post__nav-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.gothic-post__nav-title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.gothic-post__nav-prev:hover .gothic-post__nav-title,
+.gothic-post__nav-next:hover .gothic-post__nav-title {
+  color: var(--color-accent-primary);
+}
+
+/* ============================================
+   评论区域
+   ============================================ */
+.gothic-post__comments {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.gothic-post__comments-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+/* ============================================
+   目录
+   ============================================ */
+.gothic-post__toc {
+  position: sticky;
+  top: var(--space-8);
+  padding: var(--space-4);
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+}
+
+.gothic-post__toc-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-3);
+}
+
+.gothic-post__toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gothic-post__toc-list li {
+  margin-bottom: var(--space-2);
+}
+
+.gothic-post__toc-link {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.gothic-post__toc-link:hover {
+  color: var(--color-accent-primary);
+}

@@ -1,0 +1,40 @@
+{{! Gothic Theme - Footer Partial }}
+<footer class="site-footer" id="site-footer">
+    {{! 装饰分割线 }}
+    <div class="footer-line"></div>
+
+    <div class="footer-inner">
+        {{! 主要内容区域 }}
+        <div class="footer-main">
+            <div class="footer-brand">
+                {{#if @site.logo}}
+                    <a href="{{@site.url}}" class="footer-logo">
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    </a>
+                {{/if}}
+                <p class="footer-description">{{@site.description}}</p>
+            </div>
+
+            <div class="footer-nav">
+                {{! 页面链接 }}
+                <div class="footer-nav-section">
+                    <h4 class="footer-nav-title">{{t "Navigation"}}</h4>
+                    {{navigation type="secondary"}}
+                </div>
+
+                {{! 社交链接 }}
+                <div class="footer-nav-section">
+                    <h4 class="footer-nav-title">{{t "Connect"}}</h4>
+                    {{> components/social-links}}
+                </div>
+            </div>
+        </div>
+
+        {{! 版权信息 }}
+        <div class="footer-bottom">
+            <p class="footer-copyright">
+                &copy; {{date format="YYYY"}} {{@site.title}}. {{t "Written in the dark."}}
+            </p>
+        </div>
+    </div>
+</footer>

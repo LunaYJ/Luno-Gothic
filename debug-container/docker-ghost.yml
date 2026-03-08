@@ -1,0 +1,28 @@
+services:
+
+  ghost:
+    image: ghost
+#    restart: always
+    ports:
+      - 2368:2368
+    environment:
+      name: ghost-gothic
+      # see https://ghost.org/docs/config/#configuration-options
+      # 参见 https://ghost.org/docs/config/#configuration-options
+#      database__client: mysql
+#      database__connection__host: db
+#      database__connection__user: root
+#      database__connection__password: example
+#      database__connection__database: ghost
+      # this url value is just an example, and is likely wrong for your environment!
+      # 这个 url 值只是一个示例，可能不适合您的环境！
+      url: http://localhost:2368
+      # contrary to the default mentioned in the linked documentation, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
+      # 与链接文档中提到的默认值相反，此镜像默认为 NODE_ENV=production（因此需要明确指定开发模式）
+      NODE_ENV: development
+    volumes:
+      - ghost:/var/lib/ghost/content
+      - /Users/lunayj/Project/OPEN-SOURCE/theme/ghost/gothic:/var/lib/ghost/content/themes/gothic
+
+volumes:
+  ghost:

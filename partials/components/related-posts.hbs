@@ -1,0 +1,10 @@
+{{! Gothic Theme - Related Posts Component }}
+{{#get "posts" limit="3" filter="id:-{{post.id}}{{#if post.tags}}+tag:[{{post.tags[0].slug}}]{{/if}}" as |related|}}
+    {{#if related}}
+        <div class="related-grid">
+            {{#foreach related}}
+                {{> components/post-card}}
+            {{/foreach}}
+        </div>
+    {{/if}}
+{{/get}}

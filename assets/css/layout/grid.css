@@ -1,0 +1,199 @@
+/*!
+ * Gothic Theme - Grid System
+ * 网格系统
+ */
+
+/* ============================================
+   基础网格
+   ============================================ */
+.gothic-grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+/* ============================================
+   列数网格
+   ============================================ */
+.gothic-grid--cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.gothic-grid--cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gothic-grid--cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gothic-grid--cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gothic-grid--cols-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.gothic-grid--cols-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* ============================================
+   自动填充网格
+   ============================================ */
+.gothic-grid--auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.gothic-grid--auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ============================================
+   响应式网格 - 移动优先
+   ============================================ */
+
+/* 默认：单列 */
+.gothic-grid--responsive {
+  grid-template-columns: 1fr;
+}
+
+/* 平板及以上：2列 */
+@media (min-width: 768px) {
+  .gothic-grid--responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 桌面及以上：3列 */
+@media (min-width: 1024px) {
+  .gothic-grid--responsive {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   卡片网格
+   ============================================ */
+.gothic-grid--cards {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-8);
+}
+
+.gothic-grid--cards-sm {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-6);
+}
+
+.gothic-grid--cards-lg {
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: var(--space-10);
+}
+
+/* ============================================
+   特性网格
+   ============================================ */
+.gothic-grid--features {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-8);
+}
+
+/* ============================================
+   等宽列网格
+   ============================================ */
+.gothic-grid--equal {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+/* ============================================
+   间距变体
+   ============================================ */
+.gothic-grid--gap-1 { gap: var(--space-1); }
+.gothic-grid--gap-2 { gap: var(--space-2); }
+.gothic-grid--gap-3 { gap: var(--space-3); }
+.gothic-grid--gap-4 { gap: var(--space-4); }
+.gothic-grid--gap-6 { gap: var(--space-6); }
+.gothic-grid--gap-8 { gap: var(--space-8); }
+.gothic-grid--gap-10 { gap: var(--space-10); }
+.gothic-grid--gap-12 { gap: var(--space-12); }
+
+/* ============================================
+   行间距
+   ============================================ */
+.gothic-grid--row-gap-1 { row-gap: var(--space-1); }
+.gothic-grid--row-gap-2 { row-gap: var(--space-2); }
+.gothic-grid--row-gap-3 { row-gap: var(--space-3); }
+.gothic-grid--row-gap-4 { row-gap: var(--space-4); }
+.gothic-grid--row-gap-6 { row-gap: var(--space-6); }
+.gothic-grid--row-gap-8 { row-gap: var(--space-8); }
+
+/* ============================================
+   列间距
+   ============================================ */
+.gothic-grid--col-gap-1 { column-gap: var(--space-1); }
+.gothic-grid--col-gap-2 { column-gap: var(--space-2); }
+.gothic-grid--col-gap-3 { column-gap: var(--space-3); }
+.gothic-grid--col-gap-4 { column-gap: var(--space-4); }
+.gothic-grid--col-gap-6 { column-gap: var(--space-6); }
+.gothic-grid--col-gap-8 { column-gap: var(--space-8); }
+
+/* ============================================
+   对齐
+   ============================================ */
+.gothic-grid--items-start { align-items: start; }
+.gothic-grid--items-end { align-items: end; }
+.gothic-grid--items-center { align-items: center; }
+.gothic-grid--items-stretch { align-items: stretch; }
+
+.gothic-grid--justify-start { justify-items: start; }
+.gothic-grid--justify-end { justify-items: end; }
+.gothic-grid--justify-center { justify-items: center; }
+.gothic-grid--justify-stretch { justify-items: stretch; }
+
+/* ============================================
+   密集网格
+   ============================================ */
+.gothic-grid--dense {
+  grid-auto-flow: dense;
+}
+
+/* ============================================
+   Flex 网格替代方案
+   ============================================ */
+.gothic-flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--space-6) * -1) 0 0 calc(var(--space-6) * -1);
+}
+
+.gothic-flex-grid > * {
+  flex: 0 0 calc(100% - var(--space-6));
+  padding: var(--space-6) 0 0 var(--space-6);
+}
+
+.gothic-flex-grid--2 > * {
+  flex: 0 0 calc(50% - var(--space-6));
+}
+
+.gothic-flex-grid--3 > * {
+  flex: 0 0 calc(33.333333% - var(--space-6));
+}
+
+.gothic-flex-grid--4 > * {
+  flex: 0 0 calc(25% - var(--space-6));
+}
+
+@media (max-width: 767px) {
+  .gothic-flex-grid--2 > *,
+  .gothic-flex-grid--3 > *,
+  .gothic-flex-grid--4 > * {
+    flex: 0 0 calc(100% - var(--space-6));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gothic-flex-grid--3 > *,
+  .gothic-flex-grid--4 > * {
+    flex: 0 0 calc(50% - var(--space-6));
+  }
+}

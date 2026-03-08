@@ -1,0 +1,387 @@
+/*!
+ * Gothic Theme - Form Component
+ * 表单组件
+ */
+
+/* ============================================
+   基础表单
+   ============================================ */
+.gothic-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ============================================
+   表单组
+   ============================================ */
+.gothic-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* ============================================
+   标签
+   ============================================ */
+.gothic-form__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+}
+
+.gothic-form__label--required::after {
+  content: '*';
+  color: var(--color-accent-primary);
+  margin-left: var(--space-1);
+}
+
+/* ============================================
+   输入框
+   ============================================ */
+.gothic-input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  transition: border-color var(--transition-fast),
+              box-shadow var(--transition-fast),
+              background-color var(--transition-fast);
+}
+
+.gothic-input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.gothic-input:focus {
+  outline: none;
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
+}
+
+.gothic-input:disabled {
+  background-color: var(--color-bg-tertiary);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.gothic-input--error {
+  border-color: var(--color-error);
+}
+
+.gothic-input--error:focus {
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.25);
+}
+
+/* ============================================
+   输入框变体
+   ============================================ */
+.gothic-input--sm {
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-3);
+}
+
+.gothic-input--lg {
+  font-size: var(--text-lg);
+  padding: var(--space-4) var(--space-5);
+}
+
+/* ============================================
+   文本域
+   ============================================ */
+.gothic-textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: var(--leading-relaxed);
+}
+
+.gothic-textarea--sm {
+  min-height: 80px;
+}
+
+.gothic-textarea--lg {
+  min-height: 200px;
+}
+
+/* ============================================
+   选择框
+   ============================================ */
+.gothic-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23A99FC2' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+  padding-right: var(--space-10);
+  cursor: pointer;
+}
+
+/* ============================================
+   复选框
+   ============================================ */
+.gothic-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.gothic-checkbox:checked {
+  background-color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+}
+
+.gothic-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--color-text-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.gothic-checkbox:focus {
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
+  border-color: var(--color-accent-primary);
+}
+
+/* ============================================
+   单选框
+   ============================================ */
+.gothic-radio {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.gothic-radio:checked {
+  background-color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  box-shadow: inset 0 0 0 3px var(--color-bg-primary);
+}
+
+.gothic-radio:focus {
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
+  border-color: var(--color-accent-primary);
+}
+
+/* ============================================
+   开关
+   ============================================ */
+.gothic-switch {
+  appearance: none;
+  width: 44px;
+  height: 24px;
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.gothic-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-text-muted);
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+.gothic-switch:checked {
+  background-color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+}
+
+.gothic-switch:checked::after {
+  left: 22px;
+  background-color: var(--color-text-primary);
+}
+
+/* ============================================
+   表单帮助文本
+   ============================================ */
+.gothic-form__help {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* ============================================
+   表单错误信息
+   ============================================ */
+.gothic-form__error {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-error);
+  margin-top: var(--space-2);
+}
+
+/* ============================================
+   表单行
+   ============================================ */
+.gothic-form__row {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .gothic-form__row--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gothic-form__row--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   内联表单
+   ============================================ */
+.gothic-form--inline {
+  flex-direction: row;
+  align-items: flex-end;
+  gap: var(--space-4);
+}
+
+.gothic-form--inline .gothic-form__group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* ============================================
+   搜索表单
+   ============================================ */
+.gothic-search-form {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.gothic-search-form .gothic-input {
+  flex: 1;
+}
+
+/* ============================================
+   订阅表单
+   ============================================ */
+.gothic-subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .gothic-subscribe-form {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .gothic-subscribe-form .gothic-form__group {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
+
+.gothic-subscribe-form__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.gothic-subscribe-form__description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+/* ============================================
+   表单验证状态
+   ============================================ */
+.gothic-form__group.is-valid .gothic-input {
+  border-color: var(--color-success);
+}
+
+.gothic-form__group.is-invalid .gothic-input {
+  border-color: var(--color-error);
+}
+
+/* ============================================
+   文件上传
+   ============================================ */
+.gothic-file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gothic-file-upload:hover {
+  border-color: var(--color-accent-primary);
+  background-color: var(--color-bg-tertiary);
+}
+
+.gothic-file-upload__icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.gothic-file-upload__text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.gothic-file-upload__hint {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin-top: var(--space-2);
+}
+
+/* ============================================
+   焦点状态指示器（可访问性）
+   ============================================ */
+.gothic-input:focus-visible,
+.gothic-textarea:focus-visible,
+.gothic-select:focus-visible,
+.gothic-checkbox:focus-visible,
+.gothic-radio:focus-visible,
+.gothic-switch:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}

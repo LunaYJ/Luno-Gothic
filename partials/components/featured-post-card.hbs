@@ -1,0 +1,47 @@
+{{! Gothic Theme - Featured Post Card Component }}
+<article class="featured-card{{#if class}} {{class}}{{/if}}">
+
+    {{#if feature_image}}
+        <a href="{{url}}" class="featured-card__image-link">
+            <div class="featured-card__image">
+                <img
+                    src="{{img_url feature_image size="l"}}"
+                    srcset="{{img_url feature_image size="m"}} 600w, {{img_url feature_image size="l"}} 1000w, {{img_url feature_image size="xl"}} 1500w"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    alt="{{title}}"
+                    loading="eager"
+                >
+            </div>
+        </a>
+    {{/if}}
+
+    <div class="featured-card__content">
+        {{#if primary_tag}}
+            <span class="featured-card__tag">{{primary_tag.name}}</span>
+        {{/if}}
+
+        <h2 class="featured-card__title">
+            <a href="{{url}}">{{title}}</a>
+        </h2>
+
+        {{#if excerpt}}
+            <p class="featured-card__excerpt">{{excerpt words="30"}}</p>
+        {{/if}}
+
+        <div class="featured-card__meta">
+            {{#primary_author}}
+                <span class="featured-card__author">
+                    {{#if profile_image}}
+                        <img src="{{profile_image}}" alt="{{name}}" class="author-avatar">
+                    {{/if}}
+                    <span>{{name}}</span>
+                </span>
+            {{/primary_author}}
+            <span class="featured-card__separator">&middot;</span>
+            <time datetime="{{published_at}}" class="featured-card__date">
+                {{date published_at format="MMM D, YYYY"}}
+            </time>
+        </div>
+    </div>
+
+</article>

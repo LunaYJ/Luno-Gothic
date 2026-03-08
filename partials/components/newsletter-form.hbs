@@ -1,0 +1,53 @@
+{{! Gothic Theme - Newsletter Form Component }}
+<section class="newsletter-section" id="newsletter">
+    <div class="newsletter-container">
+        <div class="newsletter-label">{{t "NEWSLETTER"}}</div>
+
+        <h2 class="newsletter-title">
+            {{#if @custom.newsletter_title}}
+                {{@custom.newsletter_title}}
+            {{else}}
+                {{t "Get new essays from my personal blog."}}
+            {{/if}}
+        </h2>
+
+        <div class="newsletter-underline"></div>
+
+        <p class="newsletter-description">
+            {{#if @custom.newsletter_description}}
+                {{@custom.newsletter_description}}
+            {{else}}
+                {{t "One thoughtful post at a time. No spam, no algorithm chase."}}
+            {{/if}}
+        </p>
+
+        {{! Ghost Portal 订阅表单 }}
+        {{#if @site.members_enabled}}
+            <div class="newsletter-form-wrapper">
+                <form class="newsletter-form" data-portal="signup" action="#">
+                    <div class="form-group">
+                        <label for="newsletter-email" class="sr-only">{{t "Email address"}}</label>
+                        <input
+                            type="email"
+                            id="newsletter-email"
+                            name="email"
+                            placeholder="{{t "Your email address"}}"
+                            required
+                            autocomplete="email"
+                        >
+                        <button type="submit" class="btn-newsletter">
+                            {{t "Subscribe"}}
+                        </button>
+                    </div>
+                </form>
+
+                {{! 已有订阅状态提示 }}
+                {{#if @member}}
+                    <p class="newsletter-note">{{t "You're already subscribed!"}}</p>
+                {{/if}}
+            </div>
+        {{else}}
+            <p class="newsletter-note">{{t "Subscribe to receive new posts via email."}}</p>
+        {{/if}}
+    </div>
+</section>
