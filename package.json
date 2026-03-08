@@ -67,6 +67,10 @@
       "hero_bg": {
         "type": "image"
       },
+      "disqus_shortname": {
+        "type": "text",
+        "default": ""
+      },
       "footer_icp": {
         "type": "text",
         "default": ""

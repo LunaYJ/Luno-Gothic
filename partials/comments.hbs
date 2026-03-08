@@ -1,0 +1,28 @@
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    const disqus_config = function () {
+      this.page.url = '{{url absolute="true"}}';
+      this.page.identifier = "ghost-{{@custom.disqus_comment_id}}";
+    };
+    const disqus_shortname = "{{@custom.disqus_shortname}}";
+      {{#if @custom.disqus_shortname}}
+      (function () { // DON'T EDIT BELOW THIS LINE
+        const d = document;
+        const s = d.createElement('script');
+        s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', String(new Date().getTime()));
+        (d.head || d.body).appendChild(s);
+      })();
+      {{/if}}
+
+
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+    Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>

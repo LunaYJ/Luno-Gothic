@@ -1,66 +1,67 @@
 {{!< default}}
 
 {{#post}}
-<article class="post-page">
-  <header class="post-hero">
-    <p class="post-meta">
-      {{#primary_tag}}<a href="{{url}}">{{name}}</a>{{/primary_tag}}
-      <span>·</span>
-      <time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format="MMM DD, YYYY"}}</time>
-      <span>·</span>
-      <span>{{reading_time}}</span>
-    </p>
-    <h1>{{title}}</h1>
-    <div class="section-rule"></div>
-    {{#if custom_excerpt}}<p class="post-lead">{{custom_excerpt}}</p>{{/if}}
-  </header>
+  <article class="post-page">
+    <header class="post-hero">
+      <p class="post-meta">
+        {{#primary_tag}}<a href="{{url}}">{{name}}</a>{{/primary_tag}}
+        <span>·</span>
+        <time datetime="{{date published_at format='YYYY-MM-DD'}}">{{date published_at format="MMM DD, YYYY"}}</time>
+        <span>·</span>
+        <span>{{reading_time}}</span>
+      </p>
+      <h1>{{title}}</h1>
+      <div class="section-rule"></div>
+      {{#if custom_excerpt}}<p class="post-lead">{{custom_excerpt}}</p>{{/if}}
+    </header>
 
-  {{#if feature_image}}
-    <figure class="post-cover">
-      <img src="{{img_url feature_image size='xl'}}" alt="{{title}}">
-    </figure>
-  {{/if}}
+    {{#if feature_image}}
+      <figure class="post-cover">
+        <img src="{{img_url feature_image size='xl'}}" alt="{{title}}">
+      </figure>
+    {{/if}}
 
-  <section class="post-body-wrap">
-    <div class="post-content kg-canvas">
-      {{content}}
-    </div>
-
-    <aside class="post-side">
-      <div class="side-card">
-        <h3>Author</h3>
-        {{#primary_author}}
-          <p>{{name}}</p>
-          {{#if bio}}<p>{{bio}}</p>{{/if}}
-        {{/primary_author}}
+    <section class="post-body-wrap">
+      <div class="post-content kg-canvas">
+        {{content}}
       </div>
 
-      {{#if tags}}
+      <aside class="post-side">
         <div class="side-card">
-          <h3>Tags</h3>
-          <div class="tag-list">
-            {{#foreach tags}}
-              <a href="{{url}}">{{name}}</a>
-            {{/foreach}}
-          </div>
+          <h3>Author</h3>
+          {{#primary_author}}
+            <p>{{name}}</p>
+            {{#if bio}}<p>{{bio}}</p>{{/if}}
+          {{/primary_author}}
         </div>
-      {{/if}}
-    </aside>
+
+        {{#if tags}}
+          <div class="side-card">
+            <h3>Tags</h3>
+            <div class="tag-list">
+              {{#foreach tags}}
+                <a href="{{url}}">{{name}}</a>
+              {{/foreach}}
+            </div>
+          </div>
+        {{/if}}
+      </aside>
+    </section>
+  </article>
+
+  <section class="section-block related-block">
+    <p class="section-kicker">RELATED</p>
+    <div class="related-grid">
+      {{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}" limit="3"}}
+        {{#foreach posts}}
+          <article class="related-card">
+            <a href="{{url}}">{{title}}</a>
+          </article>
+        {{/foreach}}
+      {{/get}}
+    </div>
   </section>
-</article>
 
-<section class="section-block related-block">
-  <p class="section-kicker">RELATED</p>
-  <div class="related-grid">
-    {{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}" limit="3"}}
-      {{#foreach posts}}
-        <article class="related-card">
-          <a href="{{url}}">{{title}}</a>
-        </article>
-      {{/foreach}}
-    {{/get}}
-  </div>
-</section>
-
-{{> "site/subscribe-section"}}
+<!--  {{> "site/subscribe-section"}}-->
+  {{> comments}}
 {{/post}}
