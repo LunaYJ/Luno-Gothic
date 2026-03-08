@@ -354,23 +354,27 @@ img {
   align-items: baseline;
   padding: 18px 0;
   border-bottom: 1px solid rgba(139, 0, 0, 0.18);
-}
-
-.latest-row h3 {
-  margin: 0;
-  //color: #f3eedf;
   color: var(--text-warm);
-  font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
   transition: color .3s;
   &:hover {
     color: var(--accent);
   }
 }
 
+.latest-row h3 {
+  margin: 0;
+  //color: #f3eedf;
+  //color: var(--text-warm);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  /*&:hover {
+    color: var(--accent);
+  }*/
+}
+
 .latest-row p {
   margin: 0;
-  color: var(--text-warm);
+  //color: var(--text-warm);
   flex-shrink: 0;
 }
 

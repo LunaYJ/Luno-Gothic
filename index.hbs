@@ -12,18 +12,18 @@
   </div>
   <div class="hero-visual">
     {{#get "posts" limit="1" filter="featured:true" as |items|}}
-      {{#if items}}
-        {{#foreach items}}
-          {{#if feature_image}}
+  {{#if items}}
+    {{#foreach items}}
+      {{#if feature_image}}
             <img src="{{img_url feature_image size="l"}}" alt="{{title}}" loading="eager">
           {{else}}
             <div class="hero-fallback"></div>
           {{/if}}
-        {{/foreach}}
-      {{else}}
+    {{/foreach}}
+  {{else}}
         <div class="hero-fallback"></div>
       {{/if}}
-    {{/get}}
+{{/get}}
   </div>
 </section>-->
 
@@ -47,9 +47,11 @@
   <div class="section-rule"></div>
   <div class="latest-list">
     {{#foreach posts}}
-      <article class="latest-row">
-        <h3><a href="{{url}}">{{title}}</a></h3>
-        <p class="artical-info">{{date published_at format="YYYY/MM/DD"}} · {{reading_time}}</p>
+      <article class="">
+        <a class="latest-row" href="{{url}}">
+          <h3>{{title}}</h3>
+          <p class="artical-info">{{date published_at format="YYYY/MM/DD"}} · {{reading_time}}</p>
+        </a>
       </article>
     {{/foreach}}
   </div>
