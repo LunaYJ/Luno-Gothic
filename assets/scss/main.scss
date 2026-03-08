@@ -37,7 +37,14 @@ img {
   display: block;
   max-width: 100%;
 }
-
+.light-mask {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(-75deg, #1a2d6b00 0%, #5E7EE0 40%, #88a9ff 50%, #5E7EE0 60%, #1a2d6b00 100%);
+  z-index: 100;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
 .mobile-topbar,
 .mobile-nav {
   display: none;
@@ -138,7 +145,7 @@ img {
   grid-template-columns: auto 1fr auto;
   gap: 24px;
   align-items: center;
-  padding: 24px 72px;
+  padding: 14px 72px;
 }
 
 .site-brand {
@@ -439,6 +446,36 @@ img {
   background: #111;
   color: #eeddb5;
   border-left: 2px solid var(--accent);
+}
+
+/* 代码块样式 - 配合 highlight.js */
+.post-content pre {
+  margin: 1.5em 0;
+  padding: 0;
+  background: #0d0d0d;
+  border: 1px solid #1a1a1a;
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+.post-content pre code {
+  display: block;
+  padding: 20px 24px;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  background: transparent;
+}
+
+/* 行内代码样式 */
+.post-content :not(pre) > code {
+  padding: 2px 6px;
+  background: #1a1a1a;
+  color: #c9b68a;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.85em;
+  border-radius: var(--radius);
 }
 
 .post-side {

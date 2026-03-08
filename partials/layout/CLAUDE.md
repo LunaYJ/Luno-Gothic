@@ -6,17 +6,45 @@
 
 ---
 
-## 组件清单
+## 变更记录
 
-| 组件 | 文件 | 职责 | 使用位置 |
-|------|------|------|----------|
-| Head | `head.hbs` | HTML Head 内容 | `default.hbs` |
-| Header | `header.hbs` | 站点顶部导航 | `default.hbs` |
-| Footer | `footer.hbs` | 站点底部信息 | `default.hbs` |
+| 日期 | 版本 | 变更内容 |
+|------|------|----------|
+| 2026-03-08 | 1.0.1 | 更新面包屑，说明当前主题实际使用 site/ 而非 layout/ |
+| 2026-03-08 | 1.0.0 | 初始文档生成 |
 
 ---
 
-## 架构关系
+## 目录状态说明
+
+**重要**: 当前主题 (Gothic 2.0) 实际使用的是 `partials/site/` 目录下的组件，而非此 `layout/` 目录。
+
+这些 `layout/` partials 是：
+1. **遗留文件** - 来自早期版本或模板
+2. **备用方案** - 可能用于未来扩展
+3. **传统 Ghost 主题结构保留**
+
+**当前实际使用**:
+- `/partials/site/header.hbs` 替代 `layout/header.hbs`
+- `/partials/site/sidebar.hbs` - 新增的侧边栏组件
+- `/partials/site/footer.hbs` 替代 `layout/footer.hbs`
+- Head 部分直接在 `default.hbs` 中内联
+
+---
+
+## 组件清单
+
+| 组件 | 文件 | 职责 | 当前状态 |
+|------|------|------|----------|
+| Head | `head.hbs` | HTML Head 内容 | 可能为遗留 |
+| Header | `header.hbs` | 站点顶部导航 | 被 site/header.hbs 替代 |
+| Footer | `footer.hbs` | 站点底部信息 | 被 site/footer.hbs 替代 |
+
+---
+
+## 传统架构关系
+
+如果使用了这些 partials，结构将是：
 
 ```
 default.hbs
@@ -25,6 +53,21 @@ default.hbs
     {{> layout/header }}
     <main>{{{body}}}</main>
     {{> layout/footer }}
+</body>
+```
+
+**实际架构** (Gothic 2.0):
+
+```
+default.hbs
+├── <head> (内联)
+<body>
+    {{> site/sidebar }}
+    <div class="content-rail">
+        {{> site/header }}
+        <main>{{{body}}}</main>
+        {{> site/footer }}
+    </div>
 </body>
 ```
 
@@ -40,99 +83,49 @@ default.hbs
 3. Google Fonts 预连接和加载
 4. 主样式表引用
 
-**关键代码**:
-```handlebars
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-{{ghost_head}}
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="{{asset "css/main.css"}}" />
-```
+**注意**: 当前主题在 `default.hbs` 中直接内联了 head 内容。
 
 ---
 
 ## header.hbs
 
-**职责**: 站点顶部导航栏
+**职责**: 站点顶部导航栏（传统版本）
 
-**结构**:
-```
-header.site-header
-├── .header-line--top (装饰线)
-├── .header-inner
-│   ├── .site-brand (Logo/站点名)
-│   ├── .site-nav (主导航)
-│   ├── .header-actions
-│   │   ├── .btn-search (搜索按钮)
-│   │   └── .btn-subscribe (订阅按钮)
-│   └── .btn-menu-toggle (移动端菜单)
-└── .header-line--bottom (装饰线)
-```
-
-**JavaScript 集成**:
-- 搜索按钮: `#btn-search` -> `modules/search.js`
-- 菜单按钮: `#btn-menu-toggle` -> `modules/mobile-menu.js`
-- 导航链接: `.site-nav a` -> `modules/navigation.js`
+**当前替代**: `/partials/site/header.hbs`
 
 ---
 
 ## footer.hbs
 
-**职责**: 站点底部信息
+**职责**: 站点底部信息（传统版本）
 
-**结构**:
-```
-footer.site-footer
-├── .footer-line (装饰分割线)
-└── .footer-inner
-    ├── .footer-main
-    │   ├── .footer-brand (Logo/描述)
-    │   └── .footer-nav
-    │       ├── Navigation (二级导航)
-    │       └── Connect (社交链接)
-    └── .footer-bottom
-        └── .footer-copyright (版权信息)
-```
-
-**Ghost 功能**:
-- `{{navigation type="secondary"}}` - 二级导航
-- `{{date format="YYYY"}}` - 当前年份
+**当前替代**: `/partials/site/footer.hbs`
 
 ---
 
 ## 样式映射
 
-| 组件 | 对应 CSS 文件 |
-|------|--------------|
-| head | - (内联样式在 `ghost_head` 中) |
-| header | `assets/css/components/nav.css` |
-| footer | `assets/css/components/footer.css` |
-
----
-
-## 变更记录
-
-| 日期 | 版本 | 变更内容 |
-|------|------|----------|
-| 2026-03-08 | 1.0.0 | 初始文档生成 |
+| 组件 | 对应 CSS 文件 | 备注 |
+|------|--------------|------|
+| head | - | 样式在 ghost_head 和 screen.css 中 |
+| header | `assets/scss/main.scss` | 实际使用 site/header |
+| footer | `assets/scss/main.scss` | 实际使用 site/footer |
 
 ---
 
 ## 相关文件
 
+### 本目录 (可能为遗留)
 - `/partials/layout/head.hbs`
 - `/partials/layout/header.hbs`
 - `/partials/layout/footer.hbs`
-- `/default.hbs` (使用这些 partials 的主模板)
-- `/assets/css/components/nav.css` (Header 样式)
-- `/assets/css/components/footer.css` (Footer 样式)
+
+### 实际使用的替代组件
+- `/partials/site/header.hbs` - 实际使用的头部
+- `/partials/site/sidebar.hbs` - 新增的侧边栏
+- `/partials/site/footer.hbs` - 实际使用的底部
+- `/default.hbs` - 内联 head 内容
 
 ---
 
-*文档生成时间: 2026-03-08 14:02:37*
+*文档生成时间: 2026-03-08 16:48:37*

@@ -46,11 +46,11 @@
     "custom": {
       "profile_badge": {
         "type": "text",
-        "default": "Dark notes"
+        "default": ""
       },
       "profile_role": {
         "type": "text",
-        "default": "Writer / Curator"
+        "default": ""
       },
       "profile_bio": {
         "type": "text",

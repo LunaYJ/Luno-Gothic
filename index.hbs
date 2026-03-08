@@ -1,6 +1,6 @@
 {{!< default}}
 
-<section class="hero-section">
+<!--<section class="hero-section">
   <div class="hero-copy">
     <p class="hero-kicker">GOTHIC JOURNAL</p>
     <h1 class="hero-title">{{@custom.hero_title}}</h1>
@@ -25,7 +25,7 @@
       {{/if}}
     {{/get}}
   </div>
-</section>
+</section>-->
 
 {{#get "posts" filter="featured:true" limit="3" include="authors,tags" as |featured|}}
   {{#if featured}}
@@ -49,7 +49,7 @@
     {{#foreach posts}}
       <article class="latest-row">
         <h3><a href="{{url}}">{{title}}</a></h3>
-        <p>{{date published_at format="MMM DD, YYYY"}} · {{reading_time}}</p>
+        <p>{{date published_at format="YYYY/MM/DD"}} · {{reading_time}}</p>
       </article>
     {{/foreach}}
   </div>

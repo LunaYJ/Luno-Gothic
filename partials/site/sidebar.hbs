@@ -4,14 +4,15 @@
   <p class="profile-role">{{@custom.profile_role}}</p>
 
   {{#if @site.logo}}
-    <img class="profile-avatar" src="{{@site.logo}}" alt="{{@site.title}}">
+    <img class="profile-avatar site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
   {{else if @site.icon}}
-    <img class="profile-avatar" src="{{@site.icon}}" alt="{{@site.title}}">
+    <img class="profile-avatar site-icon" src="{{@site.icon}}" alt="{{@site.title}}">
   {{else}}
     <div class="profile-avatar profile-avatar--placeholder"></div>
   {{/if}}
 
-  <p class="profile-bio">{{@custom.profile_bio}}</p>
+<!--  <p class="profile-bio">{{@custom.profile_bio}}</p>-->
+  <p class="profile-bio">{{@site.description}}</p>
 
   <div class="profile-meta">
     <a href="{{@site.url}}/rss/" target="_blank" rel="noopener">RSS Feed</a>
