@@ -1,7 +1,7 @@
 {
   "name": "luno-gothic",
-  "description": "Ghost theme based on gothic_ui.pen Scheme B",
-  "version": "2.0.0",
+  "description": "a Ghost theme",
+  "version": "1.0.0",
   "author": {
     "name": "Luna YJ",
     "email": "luna_yj@hotmail.com"
@@ -16,7 +16,7 @@
     "dev:build": "vite build --watch --mode development",
     "dev:serve": "browser-sync start --config bs-config.js",
     "build": "vite build --mode production",
-    "zip": "npm run build && bestzip gothic.zip assets/ partials/ *.hbs package.json",
+    "zip": "npm run build && bestzip luno-gothic.zip assets/ partials/ *.hbs package.json",
     "clean": "rm -rf assets/built"
   },
   "devDependencies": {
