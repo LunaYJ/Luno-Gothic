@@ -2,6 +2,7 @@
 
 [![Ghost version](https://img.shields.io/badge/Ghost-%3E%3D5.0.0-333)](https://ghost.org/)
 [![Node version](https://img.shields.io/badge/Node-%3E%3D18.0.0-333)](https://nodejs.org/)
+[![pnpm version](https://img.shields.io/badge/pnpm-%3E%3D10.0.0-orange)](https://pnpm.io/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 一款专为 Ghost CMS 设计的暗黑哥特风格主题，融合中世纪美学与现代 Web 设计规范。
@@ -19,8 +20,10 @@
 - **会员系统支持** - 兼容 Ghost 会员订阅功能
 - **搜索功能** - 内置搜索覆盖层
 - **评论集成** - 支持 Disqus 评论系统
-- **滚动进度条** - 阅读进度可视化
+- **代码高亮** - 本地集成的 highlight.js 语法高亮
+- **图标库** - Font Awesome 6 图标支持
 - **社交链接** - 社交媒体链接展示
+- **打赏功能** - 内置文章打赏弹窗
 
 ---
 
@@ -45,8 +48,8 @@
 
 1. 下载主题 ZIP 包：
    ```bash
-   npm install
-   npm run zip
+   pnpm install
+   pnpm run zip
    ```
 2. 登录 Ghost 后台 → Settings → Design → Upload theme
 3. 上传生成的 `luno-gothic.zip` 文件
@@ -57,18 +60,52 @@
 
 ### Ghost 后台配置
 
-主题支持以下自定义配置（Settings → Design → Site wide）:
+主题支持丰富的自定义配置，在 Ghost 后台 **Settings → Design → Site wide** 中设置：
 
-| 配置项 | 说明 | 默认值 |
-|--------|------|--------|
-| `profile_badge` | 个人徽章/标签 | 空 |
-| `profile_role` | 角色/职位 | 空 |
-| `profile_bio` | 个人简介 | 记录设计、阅读与深夜思考。 |
-| `hero_title` | 首页 Hero 标题 | INTO THE VELVET NIGHT |
-| `hero_desc` | 首页 Hero 描述 | 在暗色中书写故事，在静默中雕刻观点。 |
-| `hero_bg` | 首页背景图片 | 无 |
-| `disqus_shortname` | Disqus 短域名 | 空 |
-| `footer_icp` | 页脚 ICP 备案号 | 空 |
+#### 个人资料
+
+| 配置项 | 类型 | 说明 | 默认值 |
+|--------|------|------|--------|
+| `profile_badge` | 文本 | 个人徽章/标签，显示在头像下方 | 空 |
+| `profile_role` | 文本 | 角色/职位 | 空 |
+| `profile_bio` | 文本 | 个人简介 | 记录设计、阅读与深夜思考。 |
+
+#### 首页 Hero
+
+| 配置项 | 类型 | 说明 | 默认值 |
+|--------|------|------|--------|
+| `hero_title` | 文本 | 首页大标题 | INTO THE VELVET NIGHT |
+| `hero_desc` | 文本 | 首页副标题/描述 | 在暗色中书写故事，在静默中雕刻观点。 |
+| `hero_bg` | 图片 | 首页 Hero 背景图片 | 无 |
+
+#### 评论系统
+
+| 配置项 | 类型 | 说明 | 默认值 |
+|--------|------|------|--------|
+| `shortname_by_disqus` | 文本 | Disqus 短域名，用于启用评论 | 空 |
+
+#### Newsletter 订阅
+
+| 配置项 | 类型 | 说明 | 默认值 |
+|--------|------|------|--------|
+| `newsletter_title` | 文本 | 订阅区块标题 | Subscribe |
+| `newsletter_description` | 文本 | 订阅区块描述 | Get the latest posts delivered right to your inbox. |
+
+#### 打赏功能
+
+| 配置项 | 类型 | 说明 | 默认值 |
+|--------|------|------|--------|
+| `donate_on` | 布尔 | 是否开启文章打赏功能 | false |
+| `donate_text_1` | 文本 | 第一个打赏方式名称 | 支付宝打赏 |
+| `donate_img_1` | 图片 | 第一个打赏方式二维码图片 | 无 |
+| `donate_text_2` | 文本 | 第二个打赏方式名称 | 微信打赏 |
+| `donate_img_2` | 图片 | 第二个打赏方式二维码图片 | 无 |
+
+#### 页脚设置
+
+| 配置项 | 类型 | 说明 | 默认值 |
+|--------|------|------|--------|
+| `footer_icp` | 文本 | 页脚 ICP 备案号（中国大陆网站需要） | 空 |
 
 ### 必需 Ghost 设置
 
@@ -87,25 +124,39 @@
 ### 环境要求
 
 - Node.js >= 18.0.0
+- pnpm >= 10.0.0 （**必须使用 pnpm**，禁止 npm/yarn）
 - Ghost >= 5.0.0
+
+### ⚠️ 重要：包管理器约束
+
+本项目强制使用 **pnpm**，`.npmrc` 已配置约束。如尝试使用 npm/yarn 会报错。
+
+```bash
+# ✅ 正确
+pnpm install
+
+# ❌ 错误 - 会被阻止
+npm install
+yarn install
+```
 
 ### 安装依赖
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### 开发命令
 
 ```bash
 # 启动完整开发环境（构建 + 热重载）
-npm run dev
+pnpm run dev
 
 # 仅启动构建监听
-npm run dev:build
+pnpm run dev:build
 
 # 仅启动 BrowserSync 服务器
-npm run dev:serve
+pnpm run dev:serve
 ```
 
 开发环境将同时启动：
@@ -116,7 +167,7 @@ npm run dev:serve
 
 ```bash
 # 构建生产版本
-npm run build
+pnpm run build
 ```
 
 输出文件位于 `assets/built/`：
@@ -127,13 +178,13 @@ npm run build
 
 ```bash
 # 构建并生成可安装的 ZIP 包
-npm run zip
+pnpm run zip
 ```
 
 ### 清理构建文件
 
 ```bash
-npm run clean
+pnpm run clean
 ```
 
 ---
@@ -144,13 +195,13 @@ npm run clean
 gothic/
 ├── assets/
 │   ├── scss/              # SCSS 源文件
-│   ├── css/               # 基础 CSS 文件
-│   │   ├── base/          # 基础样式（变量、重置）
-│   │   ├── layout/        # 布局样式
-│   │   └── components/    # 组件样式
+│   │   └── main.scss      # 主样式入口
+│   ├── css/               # CSS 分层架构（备用）
 │   ├── js/                # JavaScript 源文件
 │   │   ├── main.js        # 主入口
 │   │   ├── core/          # 核心工具
+│   │   │   ├── icons.js   # Font Awesome 配置
+│   │   │   └── highlight.js # 代码高亮配置
 │   │   └── modules/       # 功能模块
 │   └── built/             # 构建输出（由 Vite 生成）
 │       ├── screen.css
@@ -161,6 +212,8 @@ gothic/
 │   └── site/              # 站点组件
 ├── *.hbs                  # 页面模板
 ├── package.json           # 主题配置和依赖
+├── pnpm-workspace.yaml    # pnpm 工作区配置
+├── .npmrc                 # npm/pnpm 约束配置
 ├── vite.config.js         # Vite 构建配置
 └── bs-config.js           # BrowserSync 配置
 ```
@@ -185,17 +238,61 @@ gothic/
 - **样式预处理器** - SCSS (Sass)
 - **构建工具** - Vite
 - **开发服务器** - BrowserSync
-- **包管理** - npm/pnpm
+- **包管理** - pnpm（强制）
+- **图标库** - Font Awesome 6
+- **代码高亮** - highlight.js
+
+---
+
+## Font Awesome 图标使用
+
+主题已集成 Font Awesome 6，可直接在模板中使用：
+
+```handlebars
+<!-- 基础图标 -->
+<i class="fas fa-search"></i>
+<i class="fab fa-github"></i>
+
+<!-- 带样式的图标 -->
+<button class="icon-btn">
+  <i class="fas fa-bars"></i>
+</button>
+
+<span class="icon-text">
+  <i class="fas fa-calendar"></i>
+  2024-01-01
+</span>
+```
+
+详见 [docs/font-awesome-usage.md](docs/font-awesome-usage.md)
+
+---
+
+## 代码高亮
+
+主题使用本地集成的 highlight.js，支持以下语言：
+
+- JavaScript / TypeScript
+- CSS / SCSS
+- HTML / XML
+- JSON / YAML
+- Python
+- Bash / Shell
+- Markdown
+- SQL
+
+代码块样式已适配主题暗色风格，无需额外配置。
 
 ---
 
 ## 开发注意事项
 
-1. **SCSS 变更** - 修改 `assets/scss/` 或 `assets/css/` 后，Vite 会自动编译到 `assets/built/screen.css`
+1. **SCSS 变更** - 修改 `assets/scss/` 后，Vite 会自动编译到 `assets/built/screen.css`
 2. **JS 变更** - 修改 `assets/js/` 后，Vite 会自动打包到 `assets/built/main.js`
 3. **Handlebars 变更** - 修改 `.hbs` 文件需要刷新页面才能看到效果
-4. **图片资源** - 建议使用 `assets/images/` 目录存放图片
-5. **Ghost 辅助函数** - 可使用 Ghost 提供的所有 Handlebars 辅助函数
+4. **必须使用 pnpm** - npm/yarn 已被约束阻止
+5. **添加新图标** - 编辑 `assets/js/core/icons.js` 导入需要的图标
+6. **添加代码语言** - 编辑 `assets/js/core/highlight.js` 注册新语言
 
 ---
 
@@ -218,3 +315,5 @@ gothic/
 - [Ghost](https://ghost.org/) - 优秀的开源博客平台
 - [Vite](https://vitejs.dev/) - 下一代前端构建工具
 - [BrowserSync](https://browsersync.io/) - 开发服务器和同步工具
+- [Font Awesome](https://fontawesome.com/) - 图标库
+- [highlight.js](https://highlightjs.org/) - 代码语法高亮
