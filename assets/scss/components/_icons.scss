@@ -1,0 +1,292 @@
+/**
+ * Font Awesome 图标样式
+ * 图标的基础样式和常用组合
+ */
+
+/* ========== 图标基础样式 ========== */
+
+.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  vertical-align: -0.125em;
+  overflow: visible;
+  /* 确保 SVG 图标颜色继承父元素 */
+  fill: currentColor;
+}
+
+/* 图标尺寸变体 */
+.icon-xs {
+  font-size: 0.75em;
+}
+
+.icon-sm {
+  font-size: 0.875em;
+}
+
+.icon-lg {
+  font-size: 1.25em;
+}
+
+.icon-xl {
+  font-size: 1.5em;
+}
+
+.icon-2x {
+  font-size: 2em;
+}
+
+.icon-3x {
+  font-size: 3em;
+}
+
+/* 固定宽度图标（用于列表对齐） */
+.icon-fw {
+  width: 1.25em;
+  text-align: center;
+}
+
+/* 图标旋转动画 */
+.icon-spin {
+  animation: icon-spin 2s linear infinite;
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 图标脉冲动画 */
+.icon-pulse {
+  animation: icon-spin 1s steps(8) infinite;
+}
+
+/* 图标翻转 */
+.icon-flip-horizontal {
+  transform: scaleX(-1);
+}
+
+.icon-flip-vertical {
+  transform: scaleY(-1);
+}
+
+.icon-flip-both {
+  transform: scale(-1, -1);
+}
+
+/* 图标旋转特定角度 */
+.icon-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.icon-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.icon-rotate-270 {
+  transform: rotate(270deg);
+}
+
+/* ========== 图标按钮 ========== */
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  background: transparent;
+  color: var(--text-primary, #F5F0E8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--surface-hover, rgba(255, 255, 255, 0.1));
+    color: var(--accent, #8B0000);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  .svg-inline--fa {
+    font-size: 1.25rem;
+  }
+}
+
+/* 圆形图标按钮 */
+.icon-btn-circle {
+  border-radius: 50%;
+  background: var(--surface, rgba(255, 255, 255, 0.05));
+
+  &:hover {
+    background: var(--surface-hover, rgba(255, 255, 255, 0.1));
+  }
+}
+
+/* ========== 图标与文字组合 ========== */
+
+.icon-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+
+  .svg-inline--fa {
+    flex-shrink: 0;
+  }
+}
+
+/* 图标在文字右侧 */
+.icon-text-right {
+  flex-direction: row-reverse;
+}
+
+/* ========== 社交图标 ========== */
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--surface, rgba(255, 255, 255, 0.05));
+  color: var(--text-secondary, #C6C0D5);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--accent, #8B0000);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .svg-inline--fa {
+    font-size: 1.125rem;
+  }
+}
+
+/* ========== 导航图标 ========== */
+
+.nav-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+  color: var(--text-primary, #F5F0E8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  .svg-inline--fa {
+    width: 1.25em;
+    text-align: center;
+    opacity: 0.7;
+  }
+
+  &:hover {
+    color: var(--accent, #8B0000);
+
+    .svg-inline--fa {
+      opacity: 1;
+    }
+  }
+}
+
+/* ========== 元信息图标（文章日期、标签等） ========== */
+
+.meta-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.875rem;
+  color: var(--text-muted, #8E82A7);
+
+  .svg-inline--fa {
+    font-size: 0.875em;
+    opacity: 0.8;
+  }
+}
+
+/* ========== 功能图标（搜索、菜单等） ========== */
+
+.action-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  color: var(--text-primary, #F5F0E8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  .svg-inline--fa {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    color: var(--accent, #8B0000);
+  }
+}
+
+/* ========== 列表图标 ========== */
+
+.icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75em;
+    padding: 0.5em 0;
+
+    .svg-inline--fa {
+      margin-top: 0.25em;
+      color: var(--accent, #8B0000);
+    }
+  }
+}
+
+/* ========== 暗色主题适配 ========== */
+
+/* Font Awesome 图标在暗色背景下的默认颜色 */
+.svg-inline--fa {
+  color: inherit;
+}
+
+/* 确保品牌图标保持其品牌色（可选） */
+.brand-icon {
+  &.github:hover { color: #181717; }
+  &.twitter:hover,
+  &.x-twitter:hover { color: #000000; }
+  &.bluesky:hover { color: #1185FE; }
+  &.mastodon:hover { color: #6364FF; }
+  &.discord:hover { color: #5865F2; }
+  &.telegram:hover { color: #26A5E4; }
+  &.weixin:hover { color: #07C160; }
+  &.weibo:hover { color: #E6162D; }
+  &.bilibili:hover { color: #00A1D6; }
+  &.zhihu:hover { color: #0084FF; }
+  &.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  &.youtube:hover { color: #FF0000; }
+  &.tiktok:hover { color: #000000; }
+  &.linkedin:hover { color: #0A66C2; }
+  &.facebook:hover { color: #1877F2; }
+  &.reddit:hover { color: #FF4500; }
+  &.pinterest:hover { color: #E60023; }
+  &.dribbble:hover { color: #EA4C89; }
+  &.behance:hover { color: #1769FF; }
+  &.figma:hover { color: #F24E1E; }
+  &.spotify:hover { color: #1DB954; }
+}

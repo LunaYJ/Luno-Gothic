@@ -44,3 +44,6 @@ temp/
 # Ghost specific
 content/
 !content/themes/
+
+.pnpm-store
+debug-container/ghost

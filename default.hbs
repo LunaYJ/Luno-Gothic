@@ -11,9 +11,12 @@
   {{ghost_head}}
 </head>
 <body class="{{body_class}}">
+  <div class="light-mask"></div>
   <div class="mobile-topbar">
     <a class="mobile-brand" href="{{@site.url}}">{{@site.title}}</a>
-    <button class="mobile-menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-label="Toggle menu">Menu</button>
+    <button class="mobile-menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </div>
 
   <div class="mobile-nav">

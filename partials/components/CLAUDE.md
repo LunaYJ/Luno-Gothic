@@ -6,6 +6,15 @@
 
 ---
 
+## 变更记录
+
+| 日期 | 版本 | 变更内容 |
+|------|------|----------|
+| 2026-03-08 | 1.0.1 | 更新面包屑导航，确认当前主题使用 site/ 替代部分 components |
+| 2026-03-08 | 1.0.0 | 初始文档生成 |
+
+---
+
 ## 组件清单
 
 | 组件 | 文件 | 用途 | 关键数据 |
@@ -23,6 +32,22 @@
 
 ---
 
+## 与 site/ partials 的区别
+
+当前主题采用以下分工：
+
+| 目录 | 用途 | 当前状态 |
+|------|------|----------|
+| `partials/site/` | 站点级结构组件 | ** actively used** |
+| `partials/components/` | 通用UI组件 | 部分使用 |
+| `partials/layout/` | 传统布局组件 | 可能为遗留 |
+
+**当前主题主要使用**:
+- `/partials/site/post-card.hbs` 替代 `/partials/components/post-card.hbs`
+- `/partials/site/subscribe-section.hbs` 替代 `/partials/components/newsletter-form.hbs`
+
+---
+
 ## 组件详解
 
 ### post-card.hbs
@@ -37,18 +62,7 @@
 **参数**:
 - `class` - 额外 CSS 类（如 `featured`）
 
-**数据模型**:
-```javascript
-{
-  title: "文章标题",
-  url: "/post-slug/",
-  excerpt: "文章摘要...",
-  feature_image: "https://...",
-  primary_tag: { name: "标签名", url: "/tag/..." },
-  published_at: "2024-01-01",
-  reading_time: "5 min read"
-}
-```
+---
 
 ### author-card.hbs
 
@@ -61,15 +75,7 @@
 {{> components/author-card class="author-card--sidebar"}}
 ```
 
-**数据模型**:
-```javascript
-{
-  name: "作者名",
-  bio: "作者简介...",
-  profile_image: "https://...",
-  website: "https://..."
-}
-```
+---
 
 ### tag-chip.hbs
 
@@ -80,16 +86,7 @@
 {{/foreach}}
 ```
 
-**数据模型**:
-```javascript
-{
-  name: "标签名",
-  slug: "tag-slug",
-  url: "/tag/tag-slug/",
-  description: "标签描述",
-  count: { posts: 10 }
-}
-```
+---
 
 ### pagination.hbs
 
@@ -99,6 +96,8 @@
 ```
 
 Ghost 会自动渲染分页组件。
+
+---
 
 ### search-overlay.hbs
 
@@ -111,6 +110,8 @@ Ghost 会自动渲染分页组件。
 - 触发器: `#btn-search`
 - 面板: `#search-overlay`
 - 模块: `assets/js/modules/search.js`
+
+---
 
 ### newsletter-form.hbs
 
@@ -130,21 +131,13 @@ Ghost 会自动渲染分页组件。
 
 | 组件 | 对应 CSS 文件 |
 |------|--------------|
-| post-card | `assets/css/components/card.css` |
+| post-card | `assets/scss/main.scss` (实际使用 site/post-card) |
 | author-card | `assets/css/components/card.css` |
 | tag-chip | `assets/css/components/card.css` |
 | search-overlay | `assets/css/components/form.css` |
 | newsletter-form | `assets/css/components/form.css` |
-| pagination | `assets/css/components/nav.css` |
+| pagination | `assets/scss/main.scss` |
 | scroll-progress | `assets/css/components/nav.css` |
-
----
-
-## 变更记录
-
-| 日期 | 版本 | 变更内容 |
-|------|------|----------|
-| 2026-03-08 | 1.0.0 | 初始文档生成 |
 
 ---
 
@@ -163,4 +156,4 @@ Ghost 会自动渲染分页组件。
 
 ---
 
-*文档生成时间: 2026-03-08 14:02:37*
+*文档生成时间: 2026-03-08 16:48:37*

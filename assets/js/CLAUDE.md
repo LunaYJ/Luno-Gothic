@@ -6,6 +6,15 @@
 
 ---
 
+## 变更记录
+
+| 日期 | 版本 | 变更内容 |
+|------|------|----------|
+| 2026-03-08 | 1.0.1 | 更新文档，确认当前简化版 main.js 实现 |
+| 2026-03-08 | 1.0.0 | 初始文档生成 |
+
+---
+
 ## 模块结构
 
 ```
@@ -19,97 +28,50 @@ js/
 │   ├── search.js           # 搜索模块
 │   ├── form.js             # 表单模块
 │   └── mobile-menu.js      # 移动端菜单
-└── main.js                 # 主入口（GothicTheme 类）
+└── main.js                 # 主入口
 ```
 
 ---
 
-## 架构概览
+## 重要说明
 
-```mermaid
-graph TD
-    A["main.js<br/>GothicTheme"] --> B["core/constants.js"]
-    A --> C["core/utils.js"]
-    A --> D["modules/navigation.js"]
-    A --> E["modules/animation.js"]
-    A --> F["modules/search.js"]
-    A --> G["modules/form.js"]
-    A --> H["modules/mobile-menu.js"]
+**当前状态**: 当前主题的 `main.js` 是一个简化实现，仅包含移动端菜单功能。
 
-    D --> B
-    D --> C
-    E --> B
-    E --> C
-    F --> B
-    F --> C
-    G --> B
-    G --> C
-    H --> B
-    H --> C
-```
+**预期架构** (已规划设计):
+- 完整的 GothicTheme 类架构
+- 模块化的 Navigation、Animation、Search 等模块
+- 条件加载和全局状态管理
+
+**当前实现** (简化版):
+- 仅实现移动端菜单切换
+- 点击外部关闭菜单
 
 ---
 
-## 入口与启动
+## 当前入口 (main.js)
 
-### main.js - GothicTheme 类
-
-**职责**: 主题主控制器，管理所有模块的生命周期
-
-**初始化流程**:
 ```javascript
-class GothicTheme {
-  constructor() {
-    this.modules = {};
-    this.initialized = false;
-  }
+import '../scss/main.scss';
 
-  init() {
-    console.log('Initializing Gothic Theme...');
+const html = document.documentElement;
+const menuToggle = document.querySelector('[data-menu-toggle]');
 
-    // 1. 初始化核心模块（必需）
-    this.modules.navigation = new Navigation();
-    this.modules.navigation.init();
-
-    this.modules.animation = new Animation();
-    this.modules.animation.init();
-
-    // 2. 条件初始化（可选）
-    if (document.querySelector(SELECTORS.SEARCH_TRIGGER)) {
-      this.modules.search = new Search();
-      this.modules.search.init();
-    }
-
-    if (document.querySelector(SELECTORS.FORM_SUBSCRIBE)) {
-      this.modules.form = new Form();
-      this.modules.form.init();
-    }
-
-    if (isMobile() && document.querySelector(SELECTORS.MENU_TRIGGER)) {
-      this.modules.mobileMenu = new MobileMenu();
-      this.modules.mobileMenu.init();
-    }
-
-    // 3. 设置全局状态
-    this.setGlobalState();
-
-    // 4. 绑定全局事件
-    this.bindGlobalEvents();
-
-    this.initialized = true;
-  }
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    const open = html.classList.toggle('menu-open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+  });
 }
 
-// 自动初始化
-const gothicTheme = new GothicTheme();
-gothicTheme.init();
-window.gothicTheme = gothicTheme;
+document.addEventListener('click', (event) => {
+  if (!html.classList.contains('menu-open')) return;
+  const target = event.target;
+  if (!(target instanceof Element)) return;
+  if (target.closest('.mobile-nav') || target.closest('[data-menu-toggle]')) return;
+  html.classList.remove('menu-open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
+});
 ```
-
-**全局状态设置**:
-- 触屏设备: `body.is-touch` / `body.is-pointer`
-- 移动设备: `body.is-mobile` / `body.is-desktop`
-- 暗色主题: `body.is-dark`
 
 ---
 
@@ -126,17 +88,13 @@ export const SELECTORS = {
   MENU_TRIGGER: '#btn-menu-toggle',
   POST_CARD: '.post-card',
   FORM_SUBSCRIBE: '.newsletter-form',
-  // ...
 };
 
 export const CLASSES = {
   ACTIVE: 'active',
-  HOVER: 'hover',
-  LOADED: 'page-loaded',
   MENU_OPEN: 'menu-open',
   SEARCH_OPEN: 'search-open',
   ANIMATE_IN: 'animate-in',
-  // ...
 };
 
 export const CONFIG = {
@@ -148,7 +106,6 @@ export const CONFIG = {
   THROTTLE: {
     SCROLL: 16,
     RESIZE: 100,
-    INPUT: 150
   }
 };
 ```
@@ -157,22 +114,12 @@ export const CONFIG = {
 
 **工具函数**:
 ```javascript
-// DOM 选择器
 export const $ = (selector) => document.querySelector(selector);
 export const $$ = (selector) => document.querySelectorAll(selector);
-
-// 防抖
 export const debounce = (fn, delay) => { ... };
-
-// 节流
 export const throttle = (fn, limit) => { ... };
-
-// 设备检测
 export const isMobile = () => window.innerWidth < 768;
 export const isTouchDevice = () => 'ontouchstart' in window;
-
-// 通知
-export const showNotification = (message, type = 'info') => { ... };
 ```
 
 ---
@@ -187,26 +134,14 @@ export const showNotification = (message, type = 'info') => { ... };
 - `setActiveLink()` - 根据当前 URL 高亮导航
 - `observeUrlChanges()` - SPA 路由变化监听
 
-**事件处理**:
-- `mouseenter` / `mouseleave` - hover 状态
-- `focus` / `blur` - 键盘导航
-- `click` - 点击反馈
-
 ### animation.js
 
 **职责**: 页面动效系统
 
 **功能**:
-1. **页面加载动画**: Hero 区域淡入 (320ms)
-2. **卡片交错动画**: Intersection Observer + 60ms stagger
-3. **阅读进度条**: 滚动时实时更新（节流 16ms）
-
-**API**:
-```javascript
-animation.init();        // 初始化
-animation.reinit();      // SPA 导航后重新初始化
-animation.destroy();     // 清理
-```
+1. **页面加载动画**: Hero 区域淡入
+2. **卡片交错动画**: Intersection Observer
+3. **阅读进度条**: 滚动时实时更新
 
 ### search.js
 
@@ -214,17 +149,8 @@ animation.destroy();     // 清理
 
 **功能**:
 - 搜索弹窗开关
-- 输入防抖 (300ms)
+- 输入防抖
 - Ghost API 搜索
-- 本地回退搜索
-
-**DOM 元素**:
-```javascript
-this.trigger = $('#btn-search');
-this.panel = $('#search-overlay');
-this.input = $('#search-input');
-this.results = $('#search-results');
-```
 
 ### form.js
 
@@ -234,31 +160,20 @@ this.results = $('#search-results');
 
 **职责**: 移动端汉堡菜单
 
+**当前实现已集成在 main.js 中**
+
 ---
 
-## 对外接口
+## 构建输出
 
-### 全局访问
-
-```javascript
-// 通过 window 访问
-window.gothicTheme.init();
-window.gothicTheme.reinit();
-window.gothicTheme.destroy();
-
-// 获取模块
-const nav = window.gothicTheme.getModule('navigation');
-const anim = window.gothicTheme.getModule('animation');
+```
+main.js --[Vite]--> assets/built/main.js
 ```
 
-### 模块 API
-
-| 模块 | 方法 | 说明 |
-|------|------|------|
-| Navigation | `setActiveLink()` | 更新当前激活链接 |
-| Animation | `reinit()` | SPA 后重新初始化动画 |
-| Search | `open()` / `close()` | 控制搜索面板 |
-| MobileMenu | `open()` / `close()` | 控制移动菜单 |
+在 `default.hbs` 中引用:
+```handlebars
+<script type="module" src="{{asset 'built/main.js'}}"></script>
+```
 
 ---
 
@@ -280,54 +195,27 @@ const handleInput = debounce((e) => this.performSearch(e.target.value), 300);
 - 图片使用 `loading="lazy"`
 - 模块条件加载（只在需要时初始化）
 
-### 优雅降级
-
-- Intersection Observer 不支持时的回退
-- Touch 事件检测
-
 ---
 
-## 测试与质量
+## 未来扩展建议
 
-### 单元测试建议
-
-```javascript
-// utils.js 测试
-assert(debounce(fn, 100) instanceof Function);
-assert(isMobile() === (window.innerWidth < 768));
-
-// constants.js 测试
-assert(SELECTORS.NAV_WRAPPER === '.site-header');
-assert(CONFIG.ANIMATION.CARD_STAGGER === 60);
-```
-
-### 集成测试建议
-
-- 模块初始化流程
-- 全局状态设置
-- 事件绑定和解绑
-
----
-
-## 变更记录
-
-| 日期 | 版本 | 变更内容 |
-|------|------|----------|
-| 2026-03-08 | 1.0.0 | 初始文档生成 |
+1. **实现完整 GothicTheme 类**: 参照 `docs/js-architecture.md`
+2. **添加 Search 模块**: 实现搜索弹窗功能
+3. **添加 Animation 模块**: 实现卡片动画和阅读进度
+4. **添加表单验证**: Newsletter 表单处理
 
 ---
 
 ## 相关文件
 
-- `/assets/js/main.js` - 主入口
+- `/assets/js/main.js` - 主入口（当前简化版）
 - `/assets/js/core/constants.js` - 常量定义
 - `/assets/js/core/utils.js` - 工具函数
-- `/assets/js/modules/navigation.js` - 导航模块
-- `/assets/js/modules/animation.js` - 动画模块
-- `/assets/js/modules/search.js` - 搜索模块
-- `/assets/js/modules/form.js` - 表单模块
-- `/assets/js/modules/mobile-menu.js` - 移动端菜单
+- `/assets/js/modules/navigation.js` - 导航模块（待完善）
+- `/assets/js/modules/animation.js` - 动画模块（待完善）
+- `/assets/js/modules/search.js` - 搜索模块（待完善）
+- `/docs/js-architecture.md` - JS 架构设计文档
 
 ---
 
-*文档生成时间: 2026-03-08 14:02:37*
+*文档生成时间: 2026-03-08 16:48:37*

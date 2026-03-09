@@ -1,14 +1,16 @@
 {
-  "name": "gothic",
-  "description": "Ghost theme based on gothic_ui.pen Scheme B",
-  "version": "2.0.0",
+  "name": "luno-gothic",
+  "description": "a Ghost theme",
+  "version": "1.0.0",
   "author": {
     "name": "Luna YJ",
     "email": "luna_yj@hotmail.com"
   },
+  "packageManager": "pnpm@10.28.1",
   "engines": {
     "ghost": ">=5.0.0",
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "pnpm": ">=10.0.0"
   },
   "license": "MIT",
   "scripts": {
@@ -16,8 +18,15 @@
     "dev:build": "vite build --watch --mode development",
     "dev:serve": "browser-sync start --config bs-config.js",
     "build": "vite build --mode production",
-    "zip": "npm run build && bestzip gothic.zip assets/ partials/ *.hbs package.json",
+    "zip": "pnpm run build && bestzip luno-gothic.zip assets/ partials/ *.hbs package.json",
     "clean": "rm -rf assets/built"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/free-regular-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "highlight.js": "^11.11.1"
   },
   "devDependencies": {
     "bestzip": "^2.2.1",
@@ -46,11 +55,11 @@
     "custom": {
       "profile_badge": {
         "type": "text",
-        "default": "Dark notes"
+        "default": ""
       },
       "profile_role": {
         "type": "text",
-        "default": "Writer / Curator"
+        "default": ""
       },
       "profile_bio": {
         "type": "text",
@@ -63,6 +72,33 @@
       "hero_desc": {
         "type": "text",
         "default": "在暗色中书写故事，在静默中雕刻观点。"
+      },
+      "shortname_by_disqus": {
+        "type": "text",
+        "default": ""
+      },
+      "footer_icp": {
+        "type": "text",
+        "default": ""
+      },
+      "donate_on": {
+        "type": "boolean",
+        "description": "是否开启打赏功能",
+        "default": false
+      },
+      "donate_text_1": {
+        "type": "text",
+        "default": "支付宝打赏"
+      },
+      "donate_img_1": {
+        "type": "image"
+      },
+      "donate_text_2": {
+        "type": "text",
+        "default": "微信打赏"
+      },
+      "donate_img_2": {
+        "type": "image"
       }
     }
   }

@@ -1,0 +1,8 @@
+# pnpm workspace 配置
+# 本项目是单包仓库，此文件用于确保 pnpm 正确识别项目结构
+
+packages:
+  - '.'
+
+# 确保只有 pnpm 可以使用
+prefer-workspace-packages: true
