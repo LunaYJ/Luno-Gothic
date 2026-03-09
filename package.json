@@ -83,6 +83,25 @@
       "footer_icp": {
         "type": "text",
         "default": ""
+      },
+      "donate_on": {
+        "type": "boolean",
+        "description": "是否开启打赏功能",
+        "default": false
+      },
+      "donate_text_1": {
+        "type": "text",
+        "default": "支付宝打赏"
+      },
+      "donate_img_1": {
+        "type": "image"
+      },
+      "donate_text_2": {
+        "type": "text",
+        "default": "微信打赏"
+      },
+      "donate_img_2": {
+        "type": "image"
       }
     }
   }

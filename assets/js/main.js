@@ -26,3 +26,19 @@ document.addEventListener('click', (event) => {
   html.classList.remove('menu-open');
   menuToggle?.setAttribute('aria-expanded', 'false');
 });
+
+// 打赏弹窗切换
+document.addEventListener('click', (event) => {
+  const target = event.target;
+  console.log('document click', target, event)
+  if (!(target instanceof Element)) return;
+
+  const rewardLink = target.closest('.reward-box a');
+  if (rewardLink) {
+    event.preventDefault();
+    const rewardPop = document.querySelector('.reward-pop');
+    if (rewardPop) {
+      rewardPop.classList.toggle('pop-open');
+    }
+  }
+});

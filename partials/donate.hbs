@@ -1,0 +1,30 @@
+<!--打赏 start-->
+{{#if @custom.donate_on}}
+  <div class="reward-box">
+    <a>赏</a>
+  </div>
+  <div class="reward-pop">
+    <div class="reward-tips">
+      <span>建议打赏金额1-10元</span>
+    </div>
+    <div class="QR-inner">
+      <div class="">
+        <div>
+          {{#if @custom.donate_img_1}}
+            <img src="{{@custom.donate_img_1}}" alt="">
+          {{/if}}
+        </div>
+        <p>{{@custom.donate_text_1}}</p>
+      </div>
+      <div class="">
+        <div>
+          {{#if @custom.donate_img_2}}
+            <img src="{{@custom.donate_img_2}}" alt="">
+          {{/if}}
+        </div>
+        <p>{{@custom.donate_text_2}}</p>
+      </div>
+    </div>
+  </div>
+{{/if}}
+<!--打赏 end-->

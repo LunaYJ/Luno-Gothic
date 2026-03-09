@@ -26,13 +26,7 @@
     <p class="profile-bio">{{@site.description}}</p>
 
     <div class="profile-meta">
-      <a href="{{@site.url}}/rss/" target="_blank" rel="noopener">RSS Feed</a>
-      {{#if @site.facebook}}
-        <a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a>
-      {{/if}}
-      {{#if @site.twitter}}
-        <a href="{{twitter_url}}" target="_blank" rel="noopener">X / Twitter</a>
-      {{/if}}
+      {{> social}}
     </div>
   </div>
 </aside>
