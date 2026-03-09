@@ -1,0 +1,7 @@
+<div class="tag-cloud custom-tag-cloud" style="line-height: 1.5;">
+  {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+    {{#foreach tags}}
+      | <a href="{{url}}" class="tag-item">{{name}} ({{count.posts}})</a> |
+    {{/foreach}}
+  {{/get}}
+</div>
