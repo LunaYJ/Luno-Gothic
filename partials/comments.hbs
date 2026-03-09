@@ -9,8 +9,8 @@
       this.page.url = '{{url absolute="true"}}';
       this.page.identifier = "ghost-{{comment_id}}";
     };
-    const disqus_shortname = "{{@custom.disqus_shortname}}";
-      {{#if @custom.disqus_shortname}}
+    {{#if @custom.shortname_by_disqus}}
+      let disqus_shortname = "{{@custom.shortname_by_disqus}}";
       (function () { // DON'T EDIT BELOW THIS LINE
         const d = document;
         const s = d.createElement('script');
@@ -18,7 +18,7 @@
         s.setAttribute('data-timestamp', String(new Date().getTime()));
         (d.head || d.body).appendChild(s);
       })();
-      {{/if}}
+    {{/if}}
 
 
   </script>
