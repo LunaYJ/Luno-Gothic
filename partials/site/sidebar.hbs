@@ -1,12 +1,12 @@
 <style>
-    {{#if @custom.hero_bg}}
+    {{#if @site.cover_image}}
     .profile-rail {
-      background-image: url({{@custom.hero_bg}});
+      background-image: url({{@site.cover_image}});
     }
     {{/if}}
 </style>
 <aside class="profile-rail">
-  {{#if @custom.hero_bg}}
+  {{#if @site.cover_image}}
     <div class="profile-mask"></div>
   {{/if}}
   <div class="profile-container">

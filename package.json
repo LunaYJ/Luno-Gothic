@@ -73,9 +73,6 @@
         "type": "text",
         "default": "在暗色中书写故事，在静默中雕刻观点。"
       },
-      "hero_bg": {
-        "type": "image"
-      },
       "shortname_by_disqus": {
         "type": "text",
         "default": ""

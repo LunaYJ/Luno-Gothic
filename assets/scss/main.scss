@@ -123,6 +123,7 @@ img {
   display: block;
   max-width: 100%;
 }
+
 .light-mask {
   position: fixed;
   inset: 0;
@@ -135,6 +136,7 @@ img {
   pointer-events: none;
   mix-blend-mode: soft-light;
 }
+
 .mobile-topbar,
 .mobile-nav {
   display: none;
@@ -157,11 +159,17 @@ img {
   background-size: cover;
   border-right: 1px solid rgba(139, 0, 0, 0.5);
 }
+
+.profile-container {
+  position: relative;
+}
+
 .profile-mask {
   position: absolute;
   inset: 0;
   background-image: linear-gradient(140deg, rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9));
 }
+
 .profile-badge {
   margin: 0;
   color: var(--text-muted);
@@ -187,11 +195,12 @@ img {
 }
 
 .profile-avatar {
-  width: 100%;
-  height: 260px;
+  width: 50%;
+  aspect-ratio: 3/4;
+  border-radius: 50%;
   object-fit: cover;
   background: #111;
-  margin-bottom: 18px;
+  margin: 0 auto 18px;
 }
 
 .profile-avatar--placeholder {
@@ -446,6 +455,7 @@ img {
   border-bottom: 1px solid rgba(139, 0, 0, 0.18);
   color: var(--text-warm);
   transition: color .3s;
+
   &:hover {
     color: var(--accent);
   }
@@ -698,6 +708,7 @@ img {
   margin-bottom: 10px;
   margin-top: 20px;
   position: relative;
+
   a {
     display: inline-block;
     height: 49px;
@@ -711,6 +722,7 @@ img {
     border-radius: 50px;
     text-decoration: none;
     cursor: pointer;
+
     &:hover {
       background-color: var(--accent-light);
     }
@@ -724,13 +736,16 @@ img {
   max-height: 0;
   transition: all 0.8s ease-in;
   overflow: hidden;
+
   &.pop-open {
     max-height: 500px;
   }
+
   div.reward-tips span {
     color: #999;
     font-size: 14px;
   }
+
   div.QR-inner div {
     display: inline-block;
     margin: 10px;
@@ -741,15 +756,18 @@ img {
       transition: color .6s ease;
       color: #999;
     }
+
     &:hover {
       p {
         color: var(--text-warm);
       }
     }
+
     > div {
       border: 5px solid var(--accent-lighten);
       border-radius: 10px;
       padding: 5px;
+
       img {
         vertical-align: middle;
         width: 150px;
