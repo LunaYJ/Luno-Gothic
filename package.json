@@ -6,9 +6,11 @@
     "name": "Luna YJ",
     "email": "luna_yj@hotmail.com"
   },
+  "packageManager": "pnpm@10.28.1",
   "engines": {
     "ghost": ">=5.0.0",
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "pnpm": ">=10.0.0"
   },
   "license": "MIT",
   "scripts": {
@@ -16,8 +18,15 @@
     "dev:build": "vite build --watch --mode development",
     "dev:serve": "browser-sync start --config bs-config.js",
     "build": "vite build --mode production",
-    "zip": "npm run build && bestzip luno-gothic.zip assets/ partials/ *.hbs package.json",
+    "zip": "pnpm run build && bestzip luno-gothic.zip assets/ partials/ *.hbs package.json",
     "clean": "rm -rf assets/built"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/free-regular-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "highlight.js": "^11.11.1"
   },
   "devDependencies": {
     "bestzip": "^2.2.1",

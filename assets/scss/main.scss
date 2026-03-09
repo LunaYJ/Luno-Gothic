@@ -1,3 +1,87 @@
+@import 'components/icons';
+
+// Highlight.js 主题样式（自定义暗色主题）
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+  background: #0d0d0d;
+  color: #abb2bf;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+
+.hljs-literal {
+  color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #98c379;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
 :root {
   --bg-page: #0a0a0a;
   --bg-panel: #0d0d0d;
@@ -71,7 +155,7 @@ img {
   padding: 28px 24px;
   background-color: var(--bg-page);
   background-size: cover;
-  border-right: 1px solid rgba(139, 0, 0, 0.2);
+  border-right: 1px solid rgba(139, 0, 0, 0.5);
 }
 .profile-mask {
   position: absolute;
@@ -665,7 +749,7 @@ img {
   .mobile-nav {
     display: none;
     position: fixed;
-    top: 123px;
+    top: 78px;
     left: 0;
     right: 0;
     z-index: 19;
@@ -673,7 +757,9 @@ img {
     overflow: auto;
     padding: 16px 28px;
     background: #0a0a0a;
-    border-bottom: 1px solid rgba(139, 0, 0, 0.28);
+    border-bottom: 1px solid var(--accent);
+    box-shadow: 0 5px 10px var(--accent);
+
   }
 
   .menu-open .mobile-nav {

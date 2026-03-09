@@ -1,4 +1,12 @@
 import '../scss/main.scss';
+import { initIcons } from './core/icons';
+import { initHighlight } from './core/highlight';
+
+// 初始化 Font Awesome 图标
+initIcons();
+
+// 初始化代码高亮
+initHighlight();
 
 const html = document.documentElement;
 const menuToggle = document.querySelector('[data-menu-toggle]');
