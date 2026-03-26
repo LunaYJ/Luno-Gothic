@@ -130,7 +130,9 @@ img {
   //background: linear-gradient(-55deg, #1a2d6b00 0%, #5E7EE0 40%, #88a9ff 50%, #5E7EE0 60%, #1a2d6b00 100%);
   //background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #88a9ff 50%, #1a2d6b80 65%, #1a2d6b00 100%);
   //background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #dc143c 50%, #1a2d6b80 65%, #1a2d6b00 100%);
-  background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #ff1744 50%, #1a2d6b80 65%, #1a2d6b00 100%);
+  //background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #ff1744 50%, #1a2d6b80 65%, #1a2d6b00 100%);
+  background: conic-gradient(from
+  30deg at 80% -20%, #1a2d6b00, #1a2d6b80 165deg, #ff1744, #1a2d6b80 195deg, #1a2d6b00);
   //background: linear-gradient(-65deg, #8b000000 0%, #8b000080 35%, #ff1744 50%, #8b000080 65%, #8b000000 100%);
   z-index: 100;
   pointer-events: none;
