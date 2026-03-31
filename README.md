@@ -7,9 +7,6 @@
 
 一款专为 Ghost CMS 设计的暗黑哥特风格主题，融合中世纪美学与现代 Web 设计规范。
 
-![Theme Preview](./docs/sources/screen-pc.png)
-![Theme Preview](./docs/sources/screen-mobile.png)
-
 ---
 
 ## 主题特性
@@ -318,3 +315,10 @@ gothic/
 - [BrowserSync](https://browsersync.io/) - 开发服务器和同步工具
 - [Font Awesome](https://fontawesome.com/) - 图标库
 - [highlight.js](https://highlightjs.org/) - 代码语法高亮
+
+---
+
+## 预览
+
+![Theme Preview](./docs/sources/screen-pc.png)
+![Theme Preview](./docs/sources/screen-mobile.png)
