@@ -321,7 +321,9 @@ gothic/
 ## 预览
 
 - PC
+
   ![Theme Preview](./docs/sources/screen-pc.png)
 
 - Mobile
+
   ![Theme Preview](./docs/sources/screen-mobile.png)
