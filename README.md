@@ -322,8 +322,8 @@ gothic/
 
 - PC
 
-  ![Theme Preview](./docs/sources/screen-pc.png)
+  <img width="960" height="1025" alt="screen-pc" src="./docs/sources/screen-pc.png" />
 
 - Mobile
 
-  ![Theme Preview](./docs/sources/screen-mobile.png)
+  <img width="375" height="2533" alt="screen-mobile" src="./docs/sources/screen-mobile.png" />
