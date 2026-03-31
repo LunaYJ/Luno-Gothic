@@ -77,6 +77,15 @@
         "type": "text",
         "default": ""
       },
+      "mask_light_type": {
+        "type": "select",
+        "options": ["line", "conic"],
+        "default": "line"
+      },
+      "mask_light_color": {
+        "type": "color",
+        "default": "#ff1744"
+      },
       "footer_icp": {
         "type": "text",
         "default": ""
