@@ -123,18 +123,50 @@ img {
   display: block;
   max-width: 100%;
 }
-
+@property --light-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes conic-spin {
+  from {
+    --light-angle: -5deg;
+  }
+  to {
+    --light-angle: 65deg;
+  }
+}
+@keyframes light-spin {
+  from {
+    --light-angle: -65deg;
+  }
+  to {
+    --light-angle: 115deg;
+  }
+}
 .light-mask {
   position: fixed;
   inset: 0;
-  //background: linear-gradient(-55deg, #1a2d6b00 0%, #5E7EE0 40%, #88a9ff 50%, #5E7EE0 60%, #1a2d6b00 100%);
-  //background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #88a9ff 50%, #1a2d6b80 65%, #1a2d6b00 100%);
-  //background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #dc143c 50%, #1a2d6b80 65%, #1a2d6b00 100%);
-  background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #ff1744 50%, #1a2d6b80 65%, #1a2d6b00 100%);
-  //background: linear-gradient(-65deg, #8b000000 0%, #8b000080 35%, #ff1744 50%, #8b000080 65%, #8b000000 100%);
   z-index: 100;
   pointer-events: none;
   mix-blend-mode: soft-light;
+  --light-color: #ff1744;
+  &.conic {
+    --light-angle: 30deg;
+    background: conic-gradient(from var(--light-angle) at 80% -20%, #1a2d6b00, #1a2d6b80 165deg, var(--light-color), #1a2d6b80 195deg, #1a2d6b00);
+    &--animation {
+      animation: conic-spin 3s infinite alternate ease-in-out;
+    }
+  }
+  &.line {
+    --light-angle: -65deg;
+    background: linear-gradient(var(--light-angle), #1a2d6b00 0%, #1a2d6b80 35%, var(--light-color) 50%, #1a2d6b80 65%, #1a2d6b00 100%);
+    &--animation {
+      animation: light-spin 3s infinite both ease-in-out;
+    }
+
+  }
+
 }
 
 .mobile-topbar,
@@ -537,7 +569,7 @@ img {
 .post-cover img {
   width: 100%;
   height: 520px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .post-body-wrap {
