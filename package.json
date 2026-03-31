@@ -1,7 +1,7 @@
 {
   "name": "luno-gothic",
   "description": "a Ghost theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Luna YJ",
     "email": "luna_yj@hotmail.com"
@@ -79,7 +79,10 @@
       },
       "mask_light_type": {
         "type": "select",
-        "options": ["line", "conic"],
+        "options": [
+          "line",
+          "conic"
+        ],
         "default": "line"
       },
       "mask_light_color": {
