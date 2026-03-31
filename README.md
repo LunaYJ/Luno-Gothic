@@ -320,5 +320,8 @@ gothic/
 
 ## 预览
 
-![Theme Preview](./docs/sources/screen-pc.png)
-![Theme Preview](./docs/sources/screen-mobile.png)
+- PC
+  ![Theme Preview](./docs/sources/screen-pc.png)
+
+- Mobile
+  ![Theme Preview](./docs/sources/screen-mobile.png)
