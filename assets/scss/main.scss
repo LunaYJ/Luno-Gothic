@@ -132,8 +132,8 @@ img {
   mix-blend-mode: soft-light;
   --light-color: #ff1744;
   &.conic {
-    //background: conic-gradient(from 30deg at 70% -20%, #1a2d6b00, #1a2d6b80 165deg, #ff1744, #1a2d6b80 195deg, #1a2d6b00);
-    background: conic-gradient(from 30deg at 70% -20%, #1a2d6b00, #1a2d6b80 165deg, var(--light-color), #1a2d6b80 195deg, #1a2d6b00);
+    //background: conic-gradient(from 30deg at 80% -20%, #1a2d6b00, #1a2d6b80 165deg, #ff1744, #1a2d6b80 195deg, #1a2d6b00);
+    background: conic-gradient(from 30deg at 80% -20%, #1a2d6b00, #1a2d6b80 165deg, var(--light-color), #1a2d6b80 195deg, #1a2d6b00);
   }
   &.line {
     //background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, #ff1744 50%, #1a2d6b80 65%, #1a2d6b00 100%);
