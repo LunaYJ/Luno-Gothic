@@ -61,10 +61,6 @@
         "type": "text",
         "default": ""
       },
-      "profile_bio": {
-        "type": "text",
-        "default": "记录设计、阅读与深夜思考。"
-      },
       "hero_title": {
         "type": "text",
         "default": "INTO THE VELVET NIGHT"
@@ -73,8 +69,17 @@
         "type": "text",
         "default": "在暗色中书写故事，在静默中雕刻观点。"
       },
+      "comments_system": {
+        "description": "选择评论系统 - off: 关闭, built-in: 内置, disqus: Disqus",
+        "type": "select",
+        "options": [
+          "off", "built-in", "disqus"
+        ],
+        "default": "built-in"
+      },
       "shortname_by_disqus": {
         "type": "text",
+        "description": "Disqus 的 shortname，如：https://<shortname>.disqus.com/",
         "default": ""
       },
       "mask_light_type": {
@@ -83,19 +88,23 @@
           "line",
           "conic"
         ],
-        "default": "line"
+        "default": "line",
+        "description": "选择光照样式"
       },
       "mask_light_color": {
         "type": "color",
-        "default": "#ff1744"
+        "default": "#ff1744",
+        "description": "选择光照颜色"
       },
       "mask_light_animation": {
         "type": "boolean",
-        "default": false
+        "default": false,
+        "description": "是否开启光照动画"
       },
       "footer_icp": {
         "type": "text",
-        "default": ""
+        "default": "",
+        "description": "ICP 备案号"
       },
       "donate_on": {
         "type": "boolean",
@@ -104,14 +113,16 @@
       },
       "donate_text_1": {
         "type": "text",
-        "default": "支付宝打赏"
+        "default": "支付宝打赏",
+        "description": "打赏栏一的文本描述"
       },
       "donate_img_1": {
         "type": "image"
       },
       "donate_text_2": {
         "type": "text",
-        "default": "微信打赏"
+        "default": "微信打赏",
+        "description": "打赏栏二的文本描述"
       },
       "donate_img_2": {
         "type": "image"

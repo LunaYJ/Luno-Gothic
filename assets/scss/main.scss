@@ -282,6 +282,24 @@ img {
   gap: 24px;
   align-items: center;
   padding: 14px 72px;
+  .header-fn {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: var(--font-display);
+    .header-extra {
+      flex-shrink: 0;
+      font-family: var(--font-display);
+      //color: #7a7291;
+      font-size: 1rem;
+      .member-btn {
+        transition: color .3s;
+        &:hover {
+          color: var(--accent-lighten);
+        }
+      }
+    }
+  }
 }
 
 .site-brand {
@@ -327,6 +345,9 @@ img {
 .archive-hero .btn {
   background: var(--accent);
   color: #f4efe3;
+  &:hover {
+    background: var(--accent-light);
+  }
 }
 
 .subscribe-btn {
@@ -589,6 +610,9 @@ img {
   font-size: 1.25rem;
   line-height: 1.7;
   overflow: auto;
+  a {
+    text-decoration: underline;
+  }
 }
 
 .post-content blockquote {
@@ -715,8 +739,25 @@ img {
 
 .footer-main {
   padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .footer-info {
+    width: 100%;
+  }
 }
-
+.footer-extra {
+  display: none;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  .member-btn {
+    transition: color .3s;
+    &:hover {
+      color: var(--accent-lighten);
+    }
+  }
+}
 .footer-brand {
   margin: 0;
   color: #ede5d4;
@@ -830,7 +871,9 @@ img {
   .gothic-layout {
     display: block;
   }
-
+  .footer-extra {
+    display: block;
+  }
   .mobile-topbar {
     position: sticky;
     top: 0;
@@ -849,7 +892,9 @@ img {
     font-family: var(--font-display);
     font-size: 2rem;
   }
-
+  .search-fn {
+    margin-left: auto;
+  }
   .mobile-menu-btn {
     border: 1px solid rgba(216, 208, 232, 0.24);
     background: var(--bg-panel);
