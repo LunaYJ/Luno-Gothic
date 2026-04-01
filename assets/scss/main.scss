@@ -891,6 +891,9 @@ img {
     color: #f2e8d3;
     font-family: var(--font-display);
     font-size: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .search-fn {
     margin-left: auto;
