@@ -1,7 +1,7 @@
 {
   "name": "luno-gothic",
   "description": "a Ghost theme",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": {
     "name": "Luna YJ",
     "email": "luna_yj@hotmail.com"
@@ -73,7 +73,9 @@
         "description": "选择评论系统 - off: 关闭, built-in: 内置, disqus: Disqus",
         "type": "select",
         "options": [
-          "off", "built-in", "disqus"
+          "off",
+          "built-in",
+          "disqus"
         ],
         "default": "built-in"
       },
