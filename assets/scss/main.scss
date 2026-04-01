@@ -321,11 +321,19 @@ img {
 
 .site-nav .nav a {
   color: #b8b2c8;
+  transition: color .3s;
+  &:hover {
+    color: var(--accent-light);
+  }
 }
 
 .site-nav .nav-current a {
   //color: var(--text-warm);
-  color: var(--accent);
+  text-shadow: 0px -5px 5px var(--accent-lighten), -5px 0px 5px var(--accent-lighten), 0px 5px 5px var(--accent-lighten), 5px 0px 5px var(--accent-lighten);
+  font-weight: bold;
+  &:hover {
+    color: var(--accent);
+  }
 }
 
 .subscribe-btn,
