@@ -2,16 +2,9 @@
 
 {{#tag}}
 <section class="archive-hero">
-  <p class="section-kicker">ARCHIVE</p>
+  <p class="section-kicker">TAG</p>
   <h1 class="archive-title">{{name}}</h1>
   {{#if description}}<p class="archive-desc">{{description}}</p>{{/if}}
-  <div class="tag-filter">
-    {{#get "tags" limit="10"}}
-      {{#foreach tags}}
-        <a href="{{url}}">{{name}}</a>
-      {{/foreach}}
-    {{/get}}
-  </div>
 </section>
 {{/tag}}
 
@@ -22,4 +15,15 @@
     {{/foreach}}
   </div>
   {{pagination}}
+
+  <div class="archive-tags">
+    <div class="tag-filter">
+      {{#get "tags" limit="100" include="count.posts" order="count.posts desc"}}
+        {{#foreach tags}}
+          <a class="{{#match @root.tag.name "===" name}}active{{/match}}" href="{{url}}">{{name}} ({{count.posts}})</a>
+        {{/foreach}}
+      {{/get}}
+    </div>
+  </div>
 </section>
+

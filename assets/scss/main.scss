@@ -99,6 +99,7 @@
   --radius: 2px;
   --font-display: 'Cormorant Garamond', serif;
   --font-ui: 'Manrope', sans-serif;
+  --light-color: #ff1744;
 }
 
 * {
@@ -150,7 +151,7 @@ img {
   z-index: 100;
   pointer-events: none;
   mix-blend-mode: soft-light;
-  --light-color: #ff1744;
+
   &.conic {
     --light-angle: 30deg;
     background: conic-gradient(from var(--light-angle) at 80% -20%, #1a2d6b00, #1a2d6b80 165deg, var(--light-color), #1a2d6b80 195deg, #1a2d6b00);
@@ -476,9 +477,14 @@ img {
   padding: 14px;
 }
 
+.post-poster {
+  height: 240px;
+  background: linear-gradient(-65deg, #1a2d6b00 0%, #1a2d6b80 35%, var(--light-color) 50%, #1a2d6b80 65%, #1a2d6b00 100%);
+  //background: conic-gradient(from 30deg at 80% -20%, #1a2d6b00, #1a2d6b80 165deg, var(--light-color), #1a2d6b80 195deg, #1a2d6b00);
+}
 .post-card-image {
   width: 100%;
-  height: 240px;
+  height: 100%;
   object-fit: cover;
   margin-bottom: 12px;
 }
@@ -708,10 +714,18 @@ img {
   gap: 10px;
 }
 
-.tag-filter a:first-child {
-  background: var(--accent);
-  color: #f4efe3;
-  border-color: var(--accent);
+.tag-filter a {
+  transition: all .3s;
+  &:hover {
+    background: var(--accent);
+    color: #f4efe3;
+    border-color: var(--accent-light);
+  }
+  &.active {
+    background: var(--accent);
+    color: #f4efe3;
+    border-color: var(--accent);
+  }
 }
 
 .archive-hero {
@@ -721,6 +735,9 @@ img {
 
 .archive-body {
   padding-top: 0;
+  .archive-tags {
+    margin-top: 2rem;
+  }
 }
 
 .archive-list {
