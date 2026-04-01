@@ -5,8 +5,19 @@
     <nav class="site-nav" aria-label="Main navigation">
       {{navigation}}
     </nav>
-    <div class="search-fn">
-      {{search}}
+    <div class="header-fn">
+      <div class="search-fn">
+        {{search}}
+      </div>
+      {{#if @site.members_enabled}}
+        <div class="header-extra">
+          {{#if @member}}
+            <a class="member-btn" href="#/portal/account" data-portal="account">Hi, {{@member.firstname}}</a>
+          {{else}}
+            <a class="btn btn-primary" href="#/portal/signin" data-portal="signin">Sign in</a>
+          {{/if}}
+        </div>
+      {{/if}}
     </div>
 <!--    <a class="subscribe-btn" href="#/portal/signup">Subscribe</a>-->
   </div>

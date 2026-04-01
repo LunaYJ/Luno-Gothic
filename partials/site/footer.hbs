@@ -1,12 +1,23 @@
 <footer class="site-footer">
   <div class="footer-line"></div>
   <div class="footer-main">
-    <p class="footer-brand">{{@site.title}}</p>
-    <p class="footer-copy">
-      &copy; {{date format="YYYY"}} {{@site.title}}. All Rights Reserved.
-      {{#if @custom.footer_icp}}
-        / <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">{{@custom.footer_icp}}</a>
+    <div class="footer-info">
+      <p class="footer-brand">{{@site.title}}</p>
+      <p class="footer-copy">
+        &copy; {{date format="YYYY"}} {{@site.title}}. All Rights Reserved.
+        {{#if @custom.footer_icp}}
+          / <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">{{@custom.footer_icp}}</a>
+        {{/if}}
+      </p>
+    </div>
+    {{#if @site.members_enabled}}
+    <div class="footer-extra">
+      {{#if @member}}
+        <a class="member-btn" href="#/portal/account" data-portal="account">Hi, {{@member.firstname}}</a>
+      {{else}}
+        <a class="btn btn-primary" href="#/portal/signin" data-portal="signin">Sign in</a>
       {{/if}}
-    </p>
+    </div>
+    {{/if}}
   </div>
 </footer>

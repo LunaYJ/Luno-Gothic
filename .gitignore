@@ -48,3 +48,4 @@ content/
 .pnpm-store
 debug-container/ghost
 .claude/worktrees
+*.local.yml

@@ -66,7 +66,6 @@
 |--------|------|------|--------|
 | `profile_badge` | 文本 | 个人徽章/标签，显示在头像下方 | 空 |
 | `profile_role` | 文本 | 角色/职位 | 空 |
-| `profile_bio` | 文本 | 个人简介 | 记录设计、阅读与深夜思考。 |
 
 #### 首页 Hero
 
@@ -74,20 +73,21 @@
 |--------|------|------|--------|
 | `hero_title` | 文本 | 首页大标题 | INTO THE VELVET NIGHT |
 | `hero_desc` | 文本 | 首页副标题/描述 | 在暗色中书写故事，在静默中雕刻观点。 |
-| `hero_bg` | 图片 | 首页 Hero 背景图片 | 无 |
 
 #### 评论系统
 
 | 配置项 | 类型 | 说明 | 默认值 |
 |--------|------|------|--------|
-| `shortname_by_disqus` | 文本 | Disqus 短域名，用于启用评论 | 空 |
+| `comments_system` | 选择 | 评论系统选择：`off` 关闭, `built-in` 内置, `disqus` Disqus | built-in |
+| `shortname_by_disqus` | 文本 | Disqus 短域名，如：`https://<shortname>.disqus.com/` | 空 |
 
-#### Newsletter 订阅
+#### 光照效果
 
 | 配置项 | 类型 | 说明 | 默认值 |
 |--------|------|------|--------|
-| `newsletter_title` | 文本 | 订阅区块标题 | Subscribe |
-| `newsletter_description` | 文本 | 订阅区块描述 | Get the latest posts delivered right to your inbox. |
+| `mask_light_type` | 选择 | 光照样式：`line` 线性, `conic` 圆锥 | line |
+| `mask_light_color` | 颜色 | 光照颜色 | #ff1744 |
+| `mask_light_animation` | 布尔 | 是否开启光照动画 | false |
 
 #### 打赏功能
 

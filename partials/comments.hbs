@@ -1,3 +1,4 @@
+{{#match @custom.comments_system "disqus"}}
 <section class="post-comments">
   <div id="disqus_thread"></div>
   <script type="text/javascript">
@@ -26,3 +27,11 @@
     Disqus.</a></noscript>
   <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
+{{/match}}
+{{#match @custom.comments_system "built-in"}}
+<!--  {{#if comments}}-->
+  <section class="post-comments">
+    {{comments}}
+  </section>
+<!--  {{/if}}-->
+{{/match}}
