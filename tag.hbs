@@ -7,7 +7,6 @@
   {{#if description}}<p class="archive-desc">{{description}}</p>{{/if}}
 </section>
 {{/tag}}
-
 <section class="archive-body">
   <div class="archive-list">
     {{#foreach posts}}
@@ -15,15 +14,17 @@
     {{/foreach}}
   </div>
   {{pagination}}
-
   <div class="archive-tags">
+    {{#tag}}
     <div class="tag-filter">
       {{#get "tags" limit="100" include="count.posts" order="count.posts desc"}}
         {{#foreach tags}}
-          <a class="{{#match @root.tag.name "===" name}}active{{/match}}" href="{{url}}">{{name}} ({{count.posts}})</a>
+          <a class="{{#match slug '===' ../../slug}}active{{/match}}" href="{{url}}">{{name}} ({{count.posts}})</a>
         {{/foreach}}
       {{/get}}
     </div>
+    {{/tag}}
   </div>
 </section>
+
 
