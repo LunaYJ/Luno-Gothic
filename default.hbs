@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="{{asset 'built/screen.css'}}">
   {{ghost_head}}
 </head>
-<body class="{{body_class}}">
-  <div class="light-mask {{@custom.mask_light_type}} {{#if @custom.mask_light_animation}}{{@custom.mask_light_type}}--animation{{/if}}" style="--light-color: {{@custom.mask_light_color}}"></div>
+<body class="{{body_class}}" style="--light-color: {{@custom.mask_light_color}}">
+  <div class="light-mask {{@custom.mask_light_type}} {{#if @custom.mask_light_animation}}{{@custom.mask_light_type}}--animation{{/if}}"></div>
   <div class="mobile-topbar">
     <a class="mobile-brand" href="{{@site.url}}">{{@site.title}}</a>
     <div class="search-fn">
