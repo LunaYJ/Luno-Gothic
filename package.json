@@ -1,8 +1,14 @@
 {
   "name": "luno-gothic",
   "description": "a Ghost theme",
-  "version": "1.1.0",
-  "keywords": ["ghost-theme", "luno", "gothic", "dark", "blog"],
+  "version": "1.1.1",
+  "keywords": [
+    "ghost-theme",
+    "luno",
+    "gothic",
+    "dark",
+    "blog"
+  ],
   "author": {
     "name": "Luna YJ",
     "email": "luna_yj@hotmail.com"
