@@ -7,6 +7,20 @@
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-04-02
+
+### Added
+- 移动端增加 Profile 显示，优化移动端导航体验
+- 新增页脚位置配置选项（默认/固定）
+
+### Changed
+- 优化标签页样式和布局
+- 优化 PC 端菜单样式
+- 优化整体样式细节
+
+### Fixed
+- 修复移动端样式问题
+
 ## [1.1.0] - 2026-04-01
 
 ### Added
@@ -41,7 +55,8 @@
 - Ghost 会员系统支持
 - ICP 备案号配置
 
-[Unreleased]: https://github.com/LunaYJ/Gothic/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/LunaYJ/Gothic/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/LunaYJ/Gothic/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/LunaYJ/Gothic/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/LunaYJ/Gothic/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/LunaYJ/Gothic/releases/tag/v1.0.0
