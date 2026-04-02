@@ -110,6 +110,15 @@
         "default": false,
         "description": "是否开启光照动画"
       },
+      "footer_position": {
+        "type": "select",
+        "options": [
+          "default",
+          "sticky"
+        ],
+        "default": "default",
+        "description": "选择页脚位置 - default: 默认, sticky: 固定"
+      },
       "footer_icp": {
         "type": "text",
         "default": "",

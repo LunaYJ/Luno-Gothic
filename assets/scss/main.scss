@@ -270,9 +270,11 @@ img {
   position: sticky;
   top: 0;
   z-index: 15;
+  box-shadow: 0 5px 10px var(--accent);
 }
 
-.header-line {
+.header-line,
+.footer-line{
   height: 1px;
   background: var(--accent);
 }
@@ -757,9 +759,13 @@ img {
 }
 
 .site-footer {
-  margin-top: 40px;
-  padding: 0 72px 44px;
+  margin-top: 20px;
+  padding: 0 72px 24px;
   background: var(--bg-panel-alt);
+  &--sticky {
+    position: sticky;
+    bottom: 0;
+  }
 }
 
 .footer-main {
