@@ -196,7 +196,7 @@ img {
   background-color: var(--bg-page);
   background-size: cover;
   border-right: 1px solid rgba(139, 0, 0, 0.5);
-  .entry-btn {
+  .profile-entry {
     display: none;
   }
 }
@@ -448,9 +448,10 @@ img {
   padding: 14px 24px;
   font-size: 0.9375rem;
 }
-#entry-btn {
+#profile-entry__btn {
   //box-shadow: 0 0 30px 0px var(--accent);
   animation: entry-flash 1s infinite alternate;
+  font-weight: bold;
 }
 @keyframes entry-flash {
   from {
@@ -928,7 +929,7 @@ img {
         opacity: 0;
       }
     }
-    .entry-btn {
+    .profile-entry {
       display: block;
       text-align: center;
       margin-top: 2rem;

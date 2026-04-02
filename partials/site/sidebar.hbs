@@ -28,8 +28,8 @@
       {{> social}}
     </div>
 
-    <div class="entry-btn">
-      <a id="entry-btn" class="btn btn-primary" href="#blog">Enter Blog</a>
+    <div class="profile-entry">
+      <a id="profile-entry__btn" class="btn btn-primary" href="#blog">Enter Blog</a>
       <script>
         const _hash = location.hash;
         function handleFadeProfile () {
@@ -38,7 +38,7 @@
         if (_hash === '#blog') {
           handleFadeProfile();
         }
-        document.getElementById('entry-btn').addEventListener('click', handleFadeProfile);
+        document.getElementById('profile-entry__btn').addEventListener('click', handleFadeProfile);
       </script>
     </div>
   </div>
