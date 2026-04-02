@@ -174,6 +174,11 @@ img {
 .mobile-nav {
   display: none;
 }
+.mobile-nav {
+  .header-extra {
+    text-align: right;
+  }
+}
 
 .gothic-layout {
   display: grid;
@@ -191,6 +196,9 @@ img {
   background-color: var(--bg-page);
   background-size: cover;
   border-right: 1px solid rgba(139, 0, 0, 0.5);
+  .entry-btn {
+    display: none;
+  }
 }
 
 .profile-container {
@@ -270,7 +278,15 @@ img {
   position: sticky;
   top: 0;
   z-index: 15;
-  box-shadow: 0 5px 10px var(--accent);
+  .site-head {
+    box-shadow: 0 5px 10px var(--accent);
+    position: relative;
+    z-index: 1;
+  }
+  #announcement-bar-root {
+    position: relative;
+    z-index: 0;
+  }
 }
 
 .header-line,
@@ -432,7 +448,18 @@ img {
   padding: 14px 24px;
   font-size: 0.9375rem;
 }
-
+#entry-btn {
+  //box-shadow: 0 0 30px 0px var(--accent);
+  animation: entry-flash 1s infinite alternate;
+}
+@keyframes entry-flash {
+  from {
+    box-shadow: 0 0 0px 0px var(--accent-light);
+  }
+  to {
+    box-shadow: 0 0 30px 0px var(--accent-light);
+  }
+}
 .btn-secondary {
   background: var(--bg-panel);
   color: #d8d0e8;
@@ -777,18 +804,6 @@ img {
     width: 100%;
   }
 }
-.footer-extra {
-  display: none;
-  flex-shrink: 0;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  .member-btn {
-    transition: color .3s;
-    &:hover {
-      color: var(--accent-lighten);
-    }
-  }
-}
 .footer-brand {
   margin: 0;
   color: #ede5d4;
@@ -894,28 +909,43 @@ img {
 }
 
 @media (max-width: 980px) {
-  .profile-rail,
-  .site-header {
+  //.profile-rail,
+  .site-head {
     display: none;
+  }
+  .profile-rail {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    &--show {
+      display: block;
+      transition: height .5s ease-out, padding .5s ease-out, opacity 1s;
+      overflow: hidden;
+      &.profile-faded {
+        height: 0;
+        padding: 0;
+        opacity: 0;
+      }
+    }
+    .entry-btn {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+    }
   }
 
   .gothic-layout {
     display: block;
   }
-  .footer-extra {
-    display: block;
-  }
   .mobile-topbar {
-    position: sticky;
-    top: 0;
-    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
     padding: 16px 28px;
     background: #0a0a0a;
-    border-bottom: 1px solid rgba(139, 0, 0, 0.28);
+    border-bottom: 1px solid var(--accent);
   }
 
   .mobile-brand {
@@ -960,6 +990,9 @@ img {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+    .nav-current {
+      text-shadow: 0px -5px 5px var(--accent-lighten), -5px 0px 5px var(--accent-lighten), 0px 5px 5px var(--accent-lighten), 5px 0px 5px var(--accent-lighten);
+    }
   }
 
   .mobile-nav .nav a {
@@ -972,7 +1005,6 @@ img {
   .archive-hero,
   .archive-body,
   .post-hero,
-  .post-cover,
   .post-body-wrap,
   .related-block,
   .subscribe-section,
@@ -981,7 +1013,15 @@ img {
     padding-left: 28px;
     padding-right: 28px;
   }
-
+  .post-body-wrap {
+    padding-top: 28px;
+  }
+  .post-cover {
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
   .hero-section {
     gap: 20px;
     padding-top: 32px;

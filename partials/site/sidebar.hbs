@@ -5,7 +5,7 @@
     }
     {{/if}}
 </style>
-<aside class="profile-rail">
+<aside class="profile-rail {{#is "home"}}profile-rail--show{{/is}}">
   {{#if @site.cover_image}}
     <div class="profile-mask"></div>
   {{/if}}
@@ -26,6 +26,20 @@
 
     <div class="profile-meta">
       {{> social}}
+    </div>
+
+    <div class="entry-btn">
+      <a id="entry-btn" class="btn btn-primary" href="#blog">Enter Blog</a>
+      <script>
+        const _hash = location.hash;
+        function handleFadeProfile () {
+          document.querySelector('.profile-rail').classList.add('profile-faded')
+        }
+        if (_hash === '#blog') {
+          handleFadeProfile();
+        }
+        document.getElementById('entry-btn').addEventListener('click', handleFadeProfile);
+      </script>
     </div>
   </div>
 </aside>

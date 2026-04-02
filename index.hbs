@@ -1,12 +1,13 @@
 {{!< default}}
 
-<!--<section class="hero-section">
+{{#if @custom.show_hero}}
+<section class="hero-section">
   <div class="hero-copy">
-    <p class="hero-kicker">GOTHIC JOURNAL</p>
+<!--    <p class="hero-kicker">GOTHIC JOURNAL</p>-->
     <h1 class="hero-title">{{@custom.hero_title}}</h1>
     <p class="hero-desc">{{@custom.hero_desc}}</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#/portal/signup">Subscribe</a>
+<!--      <a class="btn btn-primary" href="#/portal/signup">Subscribe</a>-->
       <a class="btn btn-secondary" href="#latest">Browse Essays</a>
     </div>
   </div>
@@ -25,7 +26,8 @@
       {{/if}}
 {{/get}}
   </div>
-</section>-->
+</section>
+{{/if}}
 
 {{#get "posts" filter="featured:true" limit="3" include="authors,tags" as |featured|}}
   {{#if featured}}

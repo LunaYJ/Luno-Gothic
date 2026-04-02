@@ -68,13 +68,20 @@
         "type": "text",
         "default": ""
       },
+      "show_hero": {
+        "type": "boolean",
+        "default": false,
+        "description": "是否显示主屏"
+      },
       "hero_title": {
         "type": "text",
-        "default": "INTO THE VELVET NIGHT"
+        "default": "",
+        "description": "主屏标题"
       },
       "hero_desc": {
         "type": "text",
-        "default": "在暗色中书写故事，在静默中雕刻观点。"
+        "default": "",
+        "description": "主屏描述"
       },
       "comments_system": {
         "description": "选择评论系统 - off: 关闭, built-in: 内置, disqus: Disqus",

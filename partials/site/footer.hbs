@@ -10,14 +10,5 @@
         {{/if}}
       </p>
     </div>
-    {{#if @site.members_enabled}}
-    <div class="footer-extra">
-      {{#if @member}}
-        <a class="member-btn" href="#/portal/account" data-portal="account">Hi, {{@member.firstname}}</a>
-      {{else}}
-        <a class="btn btn-primary" href="#/portal/signin" data-portal="signin">Sign in</a>
-      {{/if}}
-    </div>
-    {{/if}}
   </div>
 </footer>
