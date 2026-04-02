@@ -55,9 +55,7 @@
     <div class="related-grid">
       {{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}" limit="3"}}
         {{#foreach posts}}
-          <article class="related-card">
-            <a href="{{url}}">{{title}}</a>
-          </article>
+          {{> "site/post-card"}}
         {{/foreach}}
       {{/get}}
     </div>
