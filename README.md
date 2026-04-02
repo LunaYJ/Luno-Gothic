@@ -17,11 +17,12 @@
 - **完整页面支持** - 首页、文章页、标签页、作者页、独立页面、错误页
 - **会员系统支持** - 兼容 Ghost 会员订阅功能
 - **搜索功能** - 内置搜索覆盖层
-- **评论集成** - 支持 Disqus 评论系统
+- **评论集成** - 支持 Ghost 内置评论和 Disqus 评论系统
 - **代码高亮** - 本地集成的 highlight.js 语法高亮
 - **图标库** - Font Awesome 6 图标支持
 - **社交链接** - 社交媒体链接展示
 - **打赏功能** - 内置文章打赏弹窗
+- **光照效果** - 可配置的光照动画效果
 
 ---
 
@@ -29,10 +30,10 @@
 
 | 元素 | 规范值 |
 |------|--------|
-| 主背景色 | `#0a0a0a`, `#0d0d0d` |
+| 主背景色 | `#0a0a0a`, `#0d0d0d`, `#080808` |
 | 强调色 | `#8B0000` (暗红色) |
 | 主文字色 | `#F5F0E8`, `#F2EBDC` (米色) |
-| 次要色 | `#8E82A7`, `#A99FC2` (紫色系) |
+| 次要色 | `#8E82A7`, `#A99FC2`, `#C6C0D5` (紫色系) |
 | 标题字体 | Cormorant Garamond, Cinzel |
 | 正文字体 | Manrope, Cormorant Garamond |
 
@@ -89,6 +90,13 @@
 | `mask_light_color` | 颜色 | 光照颜色 | #ff1744 |
 | `mask_light_animation` | 布尔 | 是否开启光照动画 | false |
 
+#### 页脚设置
+
+| 配置项 | 类型 | 说明 | 默认值 |
+|--------|------|------|--------|
+| `footer_position` | 选择 | 页脚位置：`default` 默认, `sticky` 固定 | default |
+| `footer_icp` | 文本 | 页脚 ICP 备案号（中国大陆网站需要） | 空 |
+
 #### 打赏功能
 
 | 配置项 | 类型 | 说明 | 默认值 |
@@ -98,12 +106,6 @@
 | `donate_img_1` | 图片 | 第一个打赏方式二维码图片 | 无 |
 | `donate_text_2` | 文本 | 第二个打赏方式名称 | 微信打赏 |
 | `donate_img_2` | 图片 | 第二个打赏方式二维码图片 | 无 |
-
-#### 页脚设置
-
-| 配置项 | 类型 | 说明 | 默认值 |
-|--------|------|------|--------|
-| `footer_icp` | 文本 | 页脚 ICP 备案号（中国大陆网站需要） | 空 |
 
 ### 必需 Ghost 设置
 
@@ -193,27 +195,62 @@ pnpm run clean
 gothic/
 ├── assets/
 │   ├── scss/              # SCSS 源文件
-│   │   └── main.scss      # 主样式入口
+│   │   ├── main.scss      # 主样式入口
+│   │   └── components/    # 组件样式
 │   ├── css/               # CSS 分层架构（备用）
 │   ├── js/                # JavaScript 源文件
 │   │   ├── main.js        # 主入口
 │   │   ├── core/          # 核心工具
 │   │   │   ├── icons.js   # Font Awesome 配置
-│   │   │   └── highlight.js # 代码高亮配置
+│   │   │   ├── highlight.js # 代码高亮配置
+│   │   │   ├── constants.js # 常量定义
+│   │   │   └── utils.js   # 工具函数
 │   │   └── modules/       # 功能模块
+│   │       ├── navigation.js
+│   │       ├── search.js
+│   │       ├── animation.js
+│   │       ├── mobile-menu.js
+│   │       └── form.js
 │   └── built/             # 构建输出（由 Vite 生成）
 │       ├── screen.css
 │       └── main.js
 ├── partials/              # Handlebars 片段
 │   ├── components/        # UI 组件
+│   │   ├── post-card.hbs
+│   │   ├── featured-post-card.hbs
+│   │   ├── author-card.hbs
+│   │   ├── pagination.hbs
+│   │   ├── search-overlay.hbs
+│   │   ├── newsletter-form.hbs
+│   │   ├── social-links.hbs
+│   │   ├── scroll-progress.hbs
+│   │   ├── tag-chip.hbs
+│   │   └── related-posts.hbs
 │   ├── layout/            # 布局组件
-│   └── site/              # 站点组件
+│   │   ├── head.hbs
+│   │   ├── header.hbs
+│   │   └── footer.hbs
+│   ├── site/              # 站点组件
+│   │   ├── header.hbs
+│   │   ├── sidebar.hbs
+│   │   ├── footer.hbs
+│   │   ├── post-card.hbs
+│   │   └── subscribe-section.hbs
+│   ├── comments.hbs       # 评论系统
+│   ├── donate.hbs         # 打赏组件
+│   ├── pagination.hbs     # 分页
+│   ├── social.hbs         # 社交链接
+│   └── tag-cloud.hbs      # 标签云
 ├── *.hbs                  # 页面模板
 ├── package.json           # 主题配置和依赖
 ├── pnpm-workspace.yaml    # pnpm 工作区配置
 ├── .npmrc                 # npm/pnpm 约束配置
 ├── vite.config.js         # Vite 构建配置
-└── bs-config.js           # BrowserSync 配置
+├── bs-config.js           # BrowserSync 配置
+└── docs/                  # 项目文档
+    ├── architecture.md    # 架构设计文档
+    ├── tech-spec.md       # 技术规范文档
+    └── font-awesome-usage.md # 图标使用指南
 ```
 
 ### 模板文件
@@ -227,6 +264,7 @@ gothic/
 | `tag.hbs` | 标签归档页 |
 | `author.hbs` | 作者页 |
 | `error.hbs` | 错误页 |
+| `page-tags.hbs` | 标签云页面 |
 
 ---
 
@@ -234,11 +272,11 @@ gothic/
 
 - **模板引擎** - Handlebars
 - **样式预处理器** - SCSS (Sass)
-- **构建工具** - Vite
+- **构建工具** - Vite 5
 - **开发服务器** - BrowserSync
 - **包管理** - pnpm（强制）
 - **图标库** - Font Awesome 6
-- **代码高亮** - highlight.js
+- **代码高亮** - highlight.js 11
 
 ---
 
