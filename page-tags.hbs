@@ -1,12 +1,11 @@
 {{!< default}}
 
 {{#post}}
-
+  <header class="post-hero">
+    <h1 class="post-title">{{{title}}}</h1>
+    <div class="section-rule"></div>
+  </header>
   <article class="post-body-wrap post-body-wrap--single post-container post-container--single">
-
-    <header class="post-header">
-      <h1 class="post-title">{{{title}}}</h1>
-    </header>
     {{#if feature_image}}
       <figure class="post-full-image">
         {{!-- This is a responsive image, it loads different sizes depending on device

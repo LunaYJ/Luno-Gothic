@@ -31,6 +31,8 @@ import {
   faExclamationCircle,
   faInfoCircle,
   faWarning,
+  faLocationDot,
+  faMapPin
 } from '@fortawesome/free-solid-svg-icons';
 
 // Free Regular Icons (far)
@@ -99,6 +101,8 @@ library.add(
   faExclamationCircle,
   faInfoCircle,
   faWarning,
+  faLocationDot,
+  faMapPin,
 
   // Regular icons
   faHeartRegular,

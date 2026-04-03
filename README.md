@@ -3,6 +3,7 @@
 [![Ghost version](https://img.shields.io/badge/Ghost-%3E%3D5.0.0-333)](https://ghost.org/)
 [![Node version](https://img.shields.io/badge/Node-%3E%3D18.0.0-333)](https://nodejs.org/)
 [![pnpm version](https://img.shields.io/badge/pnpm-%3E%3D10.0.0-orange)](https://pnpm.io/)
+[![Version](https://img.shields.io/badge/version-1.2.0-8B0000.svg)](package.json)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 一款专为 Ghost CMS 设计的暗黑哥特风格主题，融合中世纪美学与现代 Web 设计规范。
@@ -23,6 +24,7 @@
 - **社交链接** - 社交媒体链接展示
 - **打赏功能** - 内置文章打赏弹窗
 - **光照效果** - 可配置的光照动画效果
+- **SEO 优化** - 外链添加 rel 属性，优化搜索引擎表现
 
 ---
 
@@ -65,15 +67,18 @@
 
 | 配置项 | 类型 | 说明 | 默认值 |
 |--------|------|------|--------|
-| `profile_badge` | 文本 | 个人徽章/标签，显示在头像下方 | 空 |
-| `profile_role` | 文本 | 角色/职位 | 空 |
+| `profile_description` | 文本 | 个人简介/描述 | 空 |
+| `profile_social_email` | 文本 | 邮箱链接 | 空 |
+| `profile_social_github` | 文本 | Github 链接 | 空 |
 
 #### 首页 Hero
 
 | 配置项 | 类型 | 说明 | 默认值 |
 |--------|------|------|--------|
-| `hero_title` | 文本 | 首页大标题 | INTO THE VELVET NIGHT |
-| `hero_desc` | 文本 | 首页副标题/描述 | 在暗色中书写故事，在静默中雕刻观点。 |
+| `show_hero` | 布尔 | 是否显示主屏 | false |
+| `hero_title` | 文本 | 主屏标题 | 空 |
+| `hero_desc` | 文本 | 主屏描述 | 空 |
+| `hero_poster` | 图片 | 主屏图片 | 无 |
 
 #### 评论系统
 

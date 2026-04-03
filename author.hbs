@@ -1,14 +1,99 @@
 {{!< default}}
 
-{{#primary_author}}
-<section class="archive-hero">
-  <p class="section-kicker">AUTHOR</p>
-  <h1 class="archive-title">{{name}}</h1>
-  {{#if bio}}<p class="archive-desc">{{bio}}</p>{{/if}}
-</section>
-{{/primary_author}}
+{{#author}}
+  <section class="archive-hero author-hero">
+    <p class="section-kicker">AUTHOR</p>
+    <div class="section-rule"></div>
+    <div class="author-wrap" style="background-image: url('{{cover_image}}')">
+      <div class="author-item">
+        <img src="{{profile_image}}" alt="{{name}}" class="archive-cover"/>
+        <div class="author-info">
+          <h1 class="archive-title">{{name}}</h1>
+          {{#if bio}}<p class="archive-desc">{{bio}}</p>{{/if}}
+        </div>
+      </div>
+      <div class="auth-info">
+        {{#if location}}
+          <div class="auth-location">
+            <i class="fa-solid fa-location-dot"></i> {{location}}
+          </div>
+        {{/if}}
+        <ul class="auth-social-list">
+
+          {{#if website}}
+            <li class="auth-social-item">
+              website: <a href="{{website}}" target="_blank">{{website}}</a>
+            </li>
+          {{/if}}
+          {{#if twitter}}
+            <li class="auth-social-item">
+              twitter: {{twitter}}
+            </li>
+          {{/if}}
+          {{#if facebook}}
+            <li class="auth-social-item">
+              facebook: {{facebook}}
+            </li>
+          {{/if}}
+          {{#if linkedin}}
+            <li class="auth-social-item">
+              LinkedIn: {{linkedin}}
+            </li>
+          {{/if}}
+          {{#if bluesky}}
+            <li class="auth-social-item">
+              Bluesky: {{bluesky}}
+            </li>
+          {{/if}}
+          {{#if threads}}
+            <li class="auth-social-item">
+              Threads: {{threads}}
+            </li>
+          {{/if}}
+          {{#if mastodon}}
+            <li class="auth-social-item">
+              Mastodon: {{mastodon}}
+            </li>
+          {{/if}}
+          {{#if tikTok}}
+            <li class="auth-social-item">
+              TikTok: {{tikTok}}
+            </li>
+          {{/if}}
+          {{#if youtube}}
+            <li class="auth-social-item">
+              YouTube:{{youtube}}
+            </li>
+          {{/if}}
+          {{#if instagram}}
+            <li class="auth-social-item">
+              Instagram: {{instagram}}
+            </li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+    <div class="auth-posts-grid">
+      <div class="post-item">
+        <div class="post-num">{{plural ../pagination.total empty='No posts' singular='%' plural='%'}}</div>
+        <div class="post-label">Posts</div>
+      </div>
+
+      <div class="post-item">
+        <div class="post-num">{{#get "posts" limit="1" order="published_at asc"}}
+          {{date published_at format="YYYY"}}
+        {{/get}}</div>
+        <div class="post-label">Since</div>
+      </div>
+
+
+    </div>
+  </section>
+{{/author}}
 
 <section class="archive-body">
+  <p class="section-kicker">ARTICLES BY {{#author}}{{name}}{{/author}}</p>
+  <div class="section-rule"></div>
   <div class="archive-list">
     {{#foreach posts}}
       {{> "site/post-card"}}
@@ -16,3 +101,4 @@
   </div>
   {{pagination}}
 </section>
+

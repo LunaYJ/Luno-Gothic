@@ -60,11 +60,7 @@
     },
     "card_assets": true,
     "custom": {
-      "profile_badge": {
-        "type": "text",
-        "default": ""
-      },
-      "profile_role": {
+      "profile_description": {
         "type": "text",
         "default": ""
       },
@@ -82,6 +78,20 @@
         "type": "text",
         "default": "",
         "description": "主屏描述"
+      },
+      "hero_poster": {
+        "type": "image",
+        "description": "主屏图片"
+      },
+      "profile_social_email": {
+        "type": "text",
+        "default": "",
+        "description": "邮箱链接"
+      },
+      "profile_social_github": {
+        "type": "text",
+        "default": "",
+        "description": "Github 链接"
       },
       "comments_system": {
         "description": "选择评论系统 - off: 关闭, built-in: 内置, disqus: Disqus",
