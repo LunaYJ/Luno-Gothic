@@ -1,7 +1,7 @@
 {
   "name": "luno-gothic",
   "description": "a Ghost theme",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "keywords": [
     "ghost-theme",
     "luno",
@@ -38,7 +38,7 @@
   "devDependencies": {
     "bestzip": "^2.2.1",
     "browser-sync": "^3.0.2",
-    "npm-run-all": "^4.1.5",
+    "npm-run-all2": "^8.0.4",
     "sass": "^1.77.8",
     "vite": "^5.4.11"
   },
@@ -60,11 +60,7 @@
     },
     "card_assets": true,
     "custom": {
-      "profile_badge": {
-        "type": "text",
-        "default": ""
-      },
-      "profile_role": {
+      "profile_description": {
         "type": "text",
         "default": ""
       },
@@ -82,6 +78,20 @@
         "type": "text",
         "default": "",
         "description": "主屏描述"
+      },
+      "hero_poster": {
+        "type": "image",
+        "description": "主屏图片"
+      },
+      "profile_social_email": {
+        "type": "text",
+        "default": "",
+        "description": "邮箱链接"
+      },
+      "profile_social_github": {
+        "type": "text",
+        "default": "",
+        "description": "Github 链接"
       },
       "comments_system": {
         "description": "选择评论系统 - off: 关闭, built-in: 内置, disqus: Disqus",

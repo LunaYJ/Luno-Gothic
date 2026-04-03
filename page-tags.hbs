@@ -1,12 +1,11 @@
 {{!< default}}
 
 {{#post}}
-
+  <header class="post-hero">
+    <h1 class="post-title">{{{title}}}</h1>
+    <div class="section-rule"></div>
+  </header>
   <article class="post-body-wrap post-body-wrap--single post-container post-container--single">
-
-    <header class="post-header">
-      <h1 class="post-title">{{{title}}}</h1>
-    </header>
     {{#if feature_image}}
       <figure class="post-full-image">
         {{!-- This is a responsive image, it loads different sizes depending on device
@@ -24,16 +23,11 @@
         />
       </figure>
     {{/if}}
-    <section>
-        <a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu"></a>
-    </section>
     <section class="{{post_class}}">
-      {{> tag-cloud limit="all"}}
+      {{> tag-cloud}}
     </section>
 
 
   {{> donate}}
   </article>
-  {{> comments}}
-
 {{/post}}

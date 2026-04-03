@@ -30,8 +30,15 @@
         <div class="side-card">
           <h3>Author</h3>
           {{#primary_author}}
-            <p>{{name}}</p>
-            {{#if bio}}<p>{{bio}}</p>{{/if}}
+            <a href="{{url}}">
+              <div class="author-item">
+                <img src="{{profile_image}}" class="author-avatar" alt="{{name}}"/>
+                <div class="author-info">
+                  <p>{{name}}</p>
+                  {{#if bio}}<p class="author-bio">{{bio}}</p>{{/if}}
+                </div>
+              </div>
+            </a>
           {{/primary_author}}
         </div>
 
@@ -55,9 +62,7 @@
     <div class="related-grid">
       {{#get "posts" filter="id:-{{id}}+tag:{{primary_tag.slug}}" limit="3"}}
         {{#foreach posts}}
-          <article class="related-card">
-            <a href="{{url}}">{{title}}</a>
-          </article>
+          {{> "site/post-card"}}
         {{/foreach}}
       {{/get}}
     </div>

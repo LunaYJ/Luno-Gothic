@@ -1,43 +1,38 @@
-<!-- Weibo -->
-<a href="https://weibo.com/lunayj" title="@Luna 的微博" target="_blank" rel="noopener">
-  <i class="fa-brands fa-weibo"></i>
-  <span class="label">Weibo</span>
-</a>
+{{#if @custom.profile_social_email}}
+  <!-- Email -->
+  <a href="mailto:{{@custom.profile_social_email}}" title="邮件联系我">
+    <i class="fa-solid fa-envelope"></i>
+    <span class="label">Email</span>
+  </a>
+{{/if}}
 
+{{#if @custom.profile_social_github}}
 <!-- Github -->
-<a href="https://github.com/LunaYJ" title="@Luna 的 Github" target="_blank" rel="noopener">
+<a href="{{@custom.profile_social_github}}" title="@Luna 的 Github" target="_blank" rel="noopener noreferrer">
   <i class="fa-brands fa-github"></i>
   <span class="label">Github</span>
 </a>
+{{/if}}
 
-<!-- 腾讯云开发者 -->
-<!--    <li class="navigation__item">-->
-<!--      <a href="https://dev.tencent.com/u/lunayj/" title="@Luna 的 腾讯云开发者平台" target="_blank">-->
-<!--        <i class='social fa fa-globe'></i>-->
-<!--        <span class="label">Tencent Cloud</span>-->
-<!--      </a>-->
-<!--    </li>-->
-
+{{#if @site.twitter}}
 <!-- Twitter -->
-<a href="https://twitter.com/yj_lunashu" title="@Luna" target="_blank" rel="noopener">
+<a href="{{@site.twitter}}" target="_blank" rel="noopener noreferrer">
   <i class="fa-brands fa-x-twitter"></i>
   <span class="label">X / Twitter</span>
 </a>
+{{/if}}
 
+{{#if @site.facebook}}
 <!-- Facebook -->
-<a href="https://www.facebook.com/lunayj" title="@Luna" target="_blank" rel="noopener">
+<a href="{{@site.facebook}}" target="_blank" rel="noopener noreferrer">
   <i class="fa-brands fa-facebook"></i>
   <span class="label">Facebook</span>
 </a>
+{{/if}}
+
 
 <!-- RSS -->
-<a href="{{@site.url}}/rss/" rel="noopener" title="RSS" target="_blank">
+<a href="{{@site.url}}/rss/" rel="noopener noreferrer" title="RSS" target="_blank">
   <i class="fa-solid fa-rss"></i>
   <span class="label">RSS</span>
-</a>
-
-<!-- Email -->
-<a href="mailto:luna_yj@hotmail.com" title="邮件联系我">
-  <i class="fa-solid fa-envelope"></i>
-  <span class="label">Email</span>
 </a>

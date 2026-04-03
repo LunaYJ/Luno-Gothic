@@ -10,9 +10,8 @@
     <div class="profile-mask"></div>
   {{/if}}
   <div class="profile-container">
-    <p class="profile-badge">{{@custom.profile_badge}}</p>
     <h1 class="profile-name"><a href="{{@site.url}}">{{@site.title}}</a></h1>
-    <p class="profile-role">{{@custom.profile_role}}</p>
+    <p class="profile-role">{{@custom.profile_description}}</p>
 
     {{#if @site.logo}}
       <img class="profile-avatar site-logo" src="{{@site.logo}}" alt="{{@site.title}}">
@@ -28,8 +27,8 @@
       {{> social}}
     </div>
 
-    <div class="entry-btn">
-      <a id="entry-btn" class="btn btn-primary" href="#blog">Enter Blog</a>
+    <div class="profile-entry">
+      <a id="profile-entry__btn" class="btn btn-primary" href="#blog">Enter Blog</a>
       <script>
         const _hash = location.hash;
         function handleFadeProfile () {
@@ -38,7 +37,7 @@
         if (_hash === '#blog') {
           handleFadeProfile();
         }
-        document.getElementById('entry-btn').addEventListener('click', handleFadeProfile);
+        document.getElementById('profile-entry__btn').addEventListener('click', handleFadeProfile);
       </script>
     </div>
   </div>
