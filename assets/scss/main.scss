@@ -421,7 +421,7 @@ img {
     position: relative;
     .archive-cover {
       width: 8rem;
-      border-radius: 500px;
+      border-radius: 50%;
     }
   }
 }
@@ -790,6 +790,7 @@ img {
     border-radius: 500px;
     width: 38px;
     height: 38px;
+    object-fit: cover;
   }
 }
 
