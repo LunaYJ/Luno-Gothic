@@ -1,3 +1,13 @@
+## [1.3.2](https://github.com/LunaYJ/Luno-Gothic/compare/v1.3.1...v1.3.2) (2026-04-04)
+
+
+### Bug Fixes
+
+* adjust post-cover image max-height for consistent scaling ([d7ade7c](https://github.com/LunaYJ/Luno-Gothic/commit/d7ade7c3e30f864c87d2f29fc5e94f25bef7508d))
+* refine post-cover styles and consolidate header feature image layout ([bf87695](https://github.com/LunaYJ/Luno-Gothic/commit/bf8769532921644b4a8dba5aa80c6ee5354f8fce))
+* remove redundant post-cover styles ([c1f1f77](https://github.com/LunaYJ/Luno-Gothic/commit/c1f1f7718e611583e46c31003e5be451b40f037b))
+* simplify tag page header and optimize feature image responsiveness ([1aaacd7](https://github.com/LunaYJ/Luno-Gothic/commit/1aaacd7c9761a1c58e4fa8c67e5e040d93cea62e))
+
 # Changelog
 
 所有项目的显著变更都将记录在此文件中。
