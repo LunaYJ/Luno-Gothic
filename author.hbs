@@ -80,9 +80,13 @@
       </div>
 
       <div class="post-item">
-        <div class="post-num">{{#get "posts" limit="1" order="published_at asc"}}
-          {{date published_at format="YYYY"}}
-        {{/get}}</div>
+        <div class="post-num">
+          {{#get "posts" limit="1" order="published_at asc"}}
+            {{#foreach posts}}
+              {{date published_at format="YYYY"}}
+            {{/foreach}}
+        {{/get}}
+        </div>
         <div class="post-label">Since</div>
       </div>
 

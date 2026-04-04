@@ -394,7 +394,7 @@ img {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.3);
     }
   }
   .auth-social-list {
@@ -422,6 +422,9 @@ img {
     .archive-cover {
       width: 8rem;
       border-radius: 50%;
+      object-fit: cover;
+      max-height: 12rem;
+      min-height: 8rem;
     }
   }
 }
