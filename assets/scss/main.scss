@@ -442,6 +442,7 @@ img {
 .archive-hero,
 .archive-body,
 .post-hero,
+.post-cover,
 .post-body-wrap,
 .related-block,
 .post-comments,
@@ -688,6 +689,8 @@ img {
 .post-cover {
   padding-top: 0;
   padding-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .post-cover img {
@@ -1081,6 +1084,7 @@ img {
   .archive-hero,
   .archive-body,
   .post-hero,
+  .post-cover,
   .post-body-wrap,
   .related-block,
   .subscribe-section,
