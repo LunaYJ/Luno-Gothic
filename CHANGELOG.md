@@ -7,6 +7,16 @@
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-04-04
+
+### Fixed
+- 修复社交链接 URL 问题
+- 修复作者页 since 显示问题
+- 优化 CSS 样式细节
+
+### Changed
+- 优化作者页样式
+
 ## [1.3.0] - 2026-04-03
 
 ### Added
@@ -71,7 +81,8 @@
 - Ghost 会员系统支持
 - ICP 备案号配置
 
-[Unreleased]: https://github.com/LunaYJ/Gothic/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/LunaYJ/Gothic/compare/v1.3.1...HEAD
+[1.3.1]: https://github.com/LunaYJ/Gothic/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/LunaYJ/Gothic/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/LunaYJ/Gothic/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/LunaYJ/Gothic/compare/v1.0.1...v1.1.0
