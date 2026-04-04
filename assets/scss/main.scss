@@ -693,7 +693,7 @@ img {
 
 .post-cover img {
   width: 100%;
-  height: 520px;
+  max-height: 520px;
   object-fit: contain;
 }
 
@@ -1117,9 +1117,11 @@ img {
   }
 
   .hero-visual img,
-  .hero-fallback,
-  .post-cover img {
+  .hero-fallback {
     height: 360px;
+  }
+  .post-cover img {
+    max-height: 360px;
   }
 
   .latest-row {
