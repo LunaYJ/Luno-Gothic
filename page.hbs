@@ -2,32 +2,26 @@
 
 {{#post}}
 <article class="{{post_class}} post-page post-page--static">
-  {{#if @page.show_title_and_feature_image}}
     <header class="post-hero">
       <h1>{{title}}</h1>
       {{#if custom_excerpt}}<p class="post-lead">{{custom_excerpt}}</p>{{/if}}
       <div class="section-rule"></div>
     </header>
-    {{#if feature_image}}
-      <figure class="post-cover">
-        <img
-          srcset="{{img_url feature_image size="s"}} 300w,
-                  {{img_url feature_image size="m"}} 600w,
-                  {{img_url feature_image size="l"}} 1000w,
-                  {{img_url feature_image size="xl"}} 2000w"
-          sizes="(min-width: 1400px) 1400px, 92vw"
-          src="{{img_url feature_image size='xl'}}"
-          alt="{{title}}"
-        >
-      </figure>
+    {{#if @page.show_title_and_feature_image}}
+      {{#if feature_image}}
+        <figure class="post-cover">
+          <img
+            srcset="{{img_url feature_image size="s"}} 300w,
+                      {{img_url feature_image size="m"}} 600w,
+                      {{img_url feature_image size="l"}} 1000w,
+                      {{img_url feature_image size="xl"}} 2000w"
+            sizes="(min-width: 1400px) 1400px, 92vw"
+            src="{{img_url feature_image size='xl'}}"
+            alt="{{title}}"
+          >
+        </figure>
+      {{/if}}
     {{/if}}
-  {{else}}
-    <header class="post-hero">
-      <h1>{{title}}</h1>
-      {{#if custom_excerpt}}<p class="post-lead">{{custom_excerpt}}</p>{{/if}}
-      <div class="section-rule"></div>
-    </header>
-  {{/if}}
   <section class="post-body-wrap post-body-wrap--single">
     <div class="post-content kg-canvas">
       {{content}}

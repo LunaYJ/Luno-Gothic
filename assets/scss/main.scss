@@ -689,11 +689,13 @@ img {
 .post-cover {
   padding-top: 0;
   padding-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .post-cover img {
   width: 100%;
-  height: 520px;
+  max-height: 520px;
   object-fit: contain;
 }
 
@@ -1082,6 +1084,7 @@ img {
   .archive-hero,
   .archive-body,
   .post-hero,
+  .post-cover,
   .post-body-wrap,
   .related-block,
   .subscribe-section,
@@ -1094,8 +1097,6 @@ img {
     padding-top: 28px;
   }
   .post-cover {
-    padding-left: 0;
-    padding-right: 0;
     margin-right: 0;
     margin-left: 0;
   }
@@ -1117,9 +1118,11 @@ img {
   }
 
   .hero-visual img,
-  .hero-fallback,
-  .post-cover img {
+  .hero-fallback {
     height: 360px;
+  }
+  .post-cover img {
+    max-height: 360px;
   }
 
   .latest-row {
